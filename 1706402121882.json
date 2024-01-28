@@ -1,0 +1,27 @@
+Sure, I'll provide the English names and Pinyin transliterations for the counties in Ningxia Hui Autonomous Region.
+
+For the provided data, here are the translations:
+
+- 泾源县 (Jīngyuán Xiàn) - Jingyuan County
+- 彭阳县 (Péngyáng Xiàn) - Pengyang County
+
+The JSON format with the filled English and Pinyin transliterations would be:
+
+```json
+{
+  "name": "Ningxia Hui Autonomous Region",
+  "total": 2,
+  "counties": [
+    {
+      "hanzi": "泾源县",
+      "en": "Jingyuan County",
+      "pinyin": "Jīngyuán Xiàn"
+    },
+    {
+      "hanzi": "彭阳县",
+      "en": "Pengyang County",
+      "pinyin": "Péngyáng Xiàn"
+    }
+  ]
+}
+```

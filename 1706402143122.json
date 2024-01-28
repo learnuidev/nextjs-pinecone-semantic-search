@@ -1,0 +1,68 @@
+```json
+{
+  "name": "Guangxi Zhuang Autonomous Region",
+  "total": 12,
+  "counties": [
+    {
+      "hanzi": "龙胜各族自治县",
+      "en": "Longsheng Various Nationalities Autonomous County",
+      "pinyin": "Lóngshèng Gèzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "金秀瑶族自治县",
+      "en": "Jinxiu Yao Nationality Autonomous County",
+      "pinyin": "Jīnxiù Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "融水苗族自治县",
+      "en": "Rongshui Miao Nationality Autonomous County",
+      "pinyin": "Róngshuǐ Miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "三江侗族自治县",
+      "en": "Sanjiang Dong Nationality Autonomous County",
+      "pinyin": "Sānjiāng Dòngzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "隆林各族自治县",
+      "en": "Longlin Various Nationalities Autonomous County",
+      "pinyin": "Lónglín Gèzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "恭城瑶族自治县",
+      "en": "Gongcheng Yao Nationality Autonomous County",
+      "pinyin": "Gōngchéng Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "都安瑶族自治县",
+      "en": "Du'an Yao Nationality Autonomous County",
+      "pinyin": "Dū'ān Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "富川瑶族自治县",
+      "en": "Fuchuan Yao Nationality Autonomous County",
+      "pinyin": "Fùchuān Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "环江毛南族自治县",
+      "en": "Huanjiang Maonan Nationality Autonomous County",
+      "pinyin": "Huánjiāng Máonánzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "罗城仫佬族自治县",
+      "en": "Luocheng Mulao Nationality Autonomous County",
+      "pinyin": "Luóchéng Mùlǎozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "巴马瑶族自治县",
+      "en": "Bama Yao Nationality Autonomous County",
+      "pinyin": "Bāmǎ Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "大化瑶族自治县",
+      "en": "Dahua Yao Nationality Autonomous County",
+      "pinyin": "Dàhuà Yáozú Zìzhìxiàn"
+    }
+  ]
+}
+```

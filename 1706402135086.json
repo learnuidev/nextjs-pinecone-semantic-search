@@ -1,0 +1,43 @@
+```json
+{
+    "name": "Hunan Province",
+    "total": 7,
+    "counties": [
+        {
+            "hanzi": "城步苗族自治县",
+            "en": "Chengbu Miao Autonomous County",
+            "pinyin": "Chéngbù Miáozú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "江华瑶族自治县",
+            "en": "Jianghua Yao Autonomous County",
+            "pinyin": "Jiānghuà Yáozú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "麻阳苗族自治县",
+            "en": "Mayang Miao Autonomous County",
+            "pinyin": "Máyáng Miáozú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "通道侗族自治县",
+            "en": "Tongdao Dong Autonomous County",
+            "pinyin": "Tōngdào Dòngzú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "新晃侗族自治县",
+            "en": "Xinhuang Dong Autonomous County",
+            "pinyin": "Xīnhuǎng Dòngzú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "芷江侗族自治县",
+            "en": "Zhijiang Dong Autonomous County",
+            "pinyin": "Zhǐjiāng Dòngzú Zìzhìxiàn"
+        },
+        {
+            "hanzi": "靖州苗族侗族自治县",
+            "en": "Jingzhou Miao and Dong Autonomous County",
+            "pinyin": "Jìngzhōu Miáozú Dòngzú Zìzhìxiàn"
+        }
+    ]
+}
+```

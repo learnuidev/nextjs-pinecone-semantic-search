@@ -1,0 +1,63 @@
+```json
+{
+  "name": "Guizhou Province",
+  "total": 11,
+  "counties": [
+    {
+      "hanzi": "三都水族自治县",
+      "en": "Sandu Shui Autonomous County",
+      "pinyin": "Sāndū shuǐzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "紫云苗族布依族自治县",
+      "en": "Ziyun Miao and Buyi Autonomous County",
+      "pinyin": "Zǐyún miáozú bùyīzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "关岭布依族苗族自治县",
+      "en": "Guanling Buyi and Miao Autonomous County",
+      "pinyin": "Guānlǐng bùyīzú miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "镇宁布依族苗族自治县",
+      "en": "Zhenning Buyi and Miao Autonomous County",
+      "pinyin": "Zhènníng bùyīzú miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "威宁彝族回族苗族自治县",
+      "en": "Weining Yi, Hui, and Miao Autonomous County",
+      "pinyin": "Wēiníng yízú huízú miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "玉屏侗族自治县",
+      "en": "Yuping Dong Autonomous County",
+      "pinyin": "Yùpíng dòngzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "松桃苗族自治县",
+      "en": "Songtao Miao Autonomous County",
+      "pinyin": "Sōngtáo miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "印江土家族苗族自治县",
+      "en": "Yinjiang Tujia and Miao Autonomous County",
+      "pinyin": "Yìnjiāng tǔjiāzú miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "沿河土家族自治县",
+      "en": "Yanhe Tujia Autonomous County",
+      "pinyin": "Yánhé tǔjiāzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "务川仡佬族苗族自治县",
+      "en": "Wuchuan Gelao and Miao Autonomous County",
+      "pinyin": "Wùchuān gēlǎozú miáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "道真仡佬族苗族自治县",
+      "en": "Daozhen Gelao and Miao Autonomous County",
+      "pinyin": "Dàozhēn gēlǎozú miáozú Zìzhìxiàn"
+    }
+  ]
+}
+```

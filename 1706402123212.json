@@ -1,0 +1,27 @@
+Certainly! Below is the requested information with English translations and Pinyin transliterations for each county in the Inner Mongolia Autonomous Region:
+
+```json
+{
+  "name": "Inner Mongolia Autonomous Region",
+  "total": 3,
+  "counties": [
+    {
+      "hanzi": "莫力达瓦达斡尔族自治旗",
+      "en": "Morin Dawa Daur Autonomous Banner",
+      "pinyin": "Mòlìdáwǎ Dáwò'ěrzú Zìzhìqí"
+    },
+    {
+      "hanzi": "鄂伦春自治旗",
+      "en": "Oroqen Autonomous Banner",
+      "pinyin": "Èlúnchūn Zìzhìqí"
+    },
+    {
+      "hanzi": "鄂温克族自治旗",
+      "en": "Evenk Autonomous Banner",
+      "pinyin": "Èwēnkèzú Zìzhìqí"
+    }
+  ]
+}
+```
+
+This JSON accurately reflects the English names and Pinyin transliterations for the autonomous counties in the Inner Mongolia Autonomous Region as requested.

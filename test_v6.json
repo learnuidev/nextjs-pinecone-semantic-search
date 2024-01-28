@@ -1,0 +1,683 @@
+{
+  "total_counties": 117,
+  "list": [
+    {
+      "name": "Xinjiang Uygur Autonomous Region",
+      "total": 27,
+      "counties": [
+        {
+          "hanzi": "巴里坤哈萨克自治县",
+          "en": "Barkol Kazakh Autonomous County",
+          "pinyin": "Bālǐkūn Hāsàkè Zìzhìxiàn"
+        },
+        {
+          "hanzi": "木垒哈萨克自治县",
+          "en": "Mori Kazakh Autonomous County",
+          "pinyin": "Mùlěi Hāsàkè Zìzhìxiàn"
+        },
+        {
+          "hanzi": "察布查尔锡伯自治县",
+          "en": "Qapqal Xibe Autonomous County",
+          "pinyin": "Chábùchá'ěr Xībó Zìzhìxiàn"
+        },
+        {
+          "hanzi": "霍城县",
+          "en": "Huocheng County",
+          "pinyin": "Huòchéng Xiàn"
+        },
+        {
+          "hanzi": "巩留县",
+          "en": "Gongliu County",
+          "pinyin": "Gǒngliú Xiàn"
+        },
+        {
+          "hanzi": "新源县",
+          "en": "Xinyuan County",
+          "pinyin": "Xīnyuán Xiàn"
+        },
+        {
+          "hanzi": "昭苏县",
+          "en": "Zhaosu County",
+          "pinyin": "Zhāosū Xiàn"
+        },
+        {
+          "hanzi": "特克斯县",
+          "en": "Tekes County",
+          "pinyin": "Tèkèsī Xiàn"
+        },
+        {
+          "hanzi": "尼勒克县",
+          "en": "Nileke County",
+          "pinyin": "Nílèkè Xiàn"
+        },
+        {
+          "hanzi": "阿克陶县",
+          "en": "Akto County",
+          "pinyin": "Ākètáo Xiàn"
+        },
+        {
+          "hanzi": "阿合奇县",
+          "en": "Akqi County",
+          "pinyin": "Āhéqí Xiàn"
+        },
+        {
+          "hanzi": "乌恰县",
+          "en": "Wuqia County",
+          "pinyin": "Wūqià Xiàn"
+        },
+        {
+          "hanzi": "阿图什市",
+          "en": "Artux City",
+          "pinyin": "Ātúshí Shì"
+        },
+        {
+          "hanzi": "柯坪县",
+          "en": "Kalpin County",
+          "pinyin": "Kēpíng Xiàn"
+        },
+        {
+          "hanzi": "温宿县",
+          "en": "Wensu County",
+          "pinyin": "Wēnsù Xiàn"
+        },
+        {
+          "hanzi": "沙雅县",
+          "en": "Shaya County",
+          "pinyin": "Shāyǎ Xiàn"
+        },
+        {
+          "hanzi": "新和县",
+          "en": "Xinhe County",
+          "pinyin": "Xīnhé Xiàn"
+        },
+        {
+          "hanzi": "拜城县",
+          "en": "Baicheng County",
+          "pinyin": "Bàichéng Xiàn"
+        },
+        {
+          "hanzi": "乌什县",
+          "en": "Uqturpan County",
+          "pinyin": "Wūshí Xiàn"
+        },
+        {
+          "hanzi": "阿克苏市",
+          "en": "Aksu City",
+          "pinyin": "Ākèsū Shì"
+        },
+        {
+          "hanzi": "库车县",
+          "en": "Kuche County",
+          "pinyin": "Kùchē Xiàn"
+        },
+        {
+          "hanzi": "尉犁县",
+          "en": "Yuli County",
+          "pinyin": "Yùlí Xiàn"
+        },
+        {
+          "hanzi": "轮台县",
+          "en": "Luntai County",
+          "pinyin": "Lúntái Xiàn"
+        },
+        {
+          "hanzi": "若羌县",
+          "en": "Ruoqiang County",
+          "pinyin": "Ruòqiāng Xiàn"
+        },
+        {
+          "hanzi": "且末县",
+          "en": "Qiemo County",
+          "pinyin": "Qiěmò Xiàn"
+        },
+        {
+          "hanzi": "焉耆回族自治县",
+          "en": "Yanqi Hui Autonomous County",
+          "pinyin": "Yānqí Huízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "和静县",
+          "en": "Hejing County",
+          "pinyin": "Héjìng Xiàn"
+        },
+        {
+          "hanzi": "和硕县",
+          "en": "Hoxud County",
+          "pinyin": "Héshuò Xiàn"
+        },
+        {
+          "hanzi": "博湖县",
+          "en": "Bohu County",
+          "pinyin": "Bóhú Xiàn"
+        }
+      ]
+    },
+    {
+      "name": "Jilin Province",
+      "total": 1,
+      "counties": [
+        {
+          "hanzi": "长白朝鲜族自治县",
+          "en": "Changbai Korean Autonomous County",
+          "pinyin": "Chángbái Cháoxiǎnzú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Heilongjiang Province",
+      "total": 1,
+      "counties": [
+        {
+          "hanzi": "杜尔伯特蒙古族自治县",
+          "en": "Duerbote Mongol Autonomous County",
+          "pinyin": "Dù'ěrbótè Ménggǔzú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Hubei Province",
+      "total": 2,
+      "counties": [
+        {
+          "hanzi": "长阳土家族自治县",
+          "en": "Changyang Tujia Autonomous County",
+          "pinyin": "Chángyáng Tǔjiāzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "五峰土家族自治县",
+          "en": "Wufeng Tujia Autonomous County",
+          "pinyin": "Wǔfēng Tǔjiāzú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Ningxia Hui Autonomous Region",
+      "total": 2,
+      "counties": [
+        {
+          "hanzi": "泾源县",
+          "en": "Jingyuan County",
+          "pinyin": "Jīngyuán Xiàn"
+        },
+        {
+          "hanzi": "彭阳县",
+          "en": "Pengyang County",
+          "pinyin": "Péngyáng Xiàn"
+        }
+      ]
+    },
+    {
+      "name": "Tibet Autonomous Region",
+      "total": 7,
+      "counties": [
+        {
+          "hanzi": "芒康县",
+          "en": "Mangkang County",
+          "pinyin": "Mángkāng Xiàn"
+        },
+        {
+          "hanzi": "左贡县",
+          "en": "Zogang County",
+          "pinyin": "Zuǒgòng Xiàn"
+        },
+        {
+          "hanzi": "察隅县",
+          "en": "Chayu County",
+          "pinyin": "Cháyú Xiàn"
+        },
+        {
+          "hanzi": "朗县",
+          "en": "Lang County",
+          "pinyin": "Láng Xiàn"
+        },
+        {
+          "hanzi": "墨脱县",
+          "en": "Motuo County",
+          "pinyin": "Mòtuō Xiàn"
+        },
+        {
+          "hanzi": "米林县",
+          "en": "Milin County",
+          "pinyin": "Mǐlín Xiàn"
+        },
+        {
+          "hanzi": "林芝县",
+          "en": "Nyingchi County",
+          "pinyin": "Línzhī Xiàn"
+        }
+      ]
+    },
+    {
+      "name": "Inner Mongolia Autonomous Region",
+      "total": 3,
+      "counties": [
+        {
+          "hanzi": "莫力达瓦达斡尔族自治旗",
+          "en": "Morin Dawa Daur Autonomous Banner",
+          "pinyin": "Mòlìdáwǎ Dáwò'ěrzú Zìzhìqí"
+        },
+        {
+          "hanzi": "鄂伦春自治旗",
+          "en": "Oroqen Autonomous Banner",
+          "pinyin": "Èlúnchūn Zìzhìqí"
+        },
+        {
+          "hanzi": "鄂温克族自治旗",
+          "en": "Evenk Autonomous Banner",
+          "pinyin": "Èwēnkèzú Zìzhìqí"
+        }
+      ]
+    },
+    {
+      "name": "Qinghai Province",
+      "total": 7,
+      "counties": [
+        {
+          "hanzi": "互助土族自治县",
+          "en": "Huzhu Tu Autonomous County",
+          "pinyin": "Hùzhù Tǔzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "大通回族土族自治县",
+          "en": "Datong Hui and Tu Autonomous County",
+          "pinyin": "Dàtōng Huízú Tǔzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "民和回族土族自治县",
+          "en": "Minhe Hui and Tu Autonomous County",
+          "pinyin": "Mín hé Huízú Tǔzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "化隆回族自治县",
+          "en": "Hualong Hui Autonomous County",
+          "pinyin": "Huàlóng Huízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "循化撒拉族自治县",
+          "en": "Xunhua Salar Autonomous County",
+          "pinyin": "Xúnhuà Sǎlāzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "门源回族自治县",
+          "en": "Menyuan Hui Autonomous County",
+          "pinyin": "Ményuán Huízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "祁连县",
+          "en": "Qilian County",
+          "pinyin": "Qílián Xiàn"
+        }
+      ]
+    },
+    {
+      "name": "Hunan Province",
+      "total": 7,
+      "counties": [
+        {
+          "hanzi": "城步苗族自治县",
+          "en": "Chengbu Miao Autonomous County",
+          "pinyin": "Chéngbù Miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "江华瑶族自治县",
+          "en": "Jianghua Yao Autonomous County",
+          "pinyin": "Jiānghuà Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "麻阳苗族自治县",
+          "en": "Mayang Miao Autonomous County",
+          "pinyin": "Máyáng Miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "通道侗族自治县",
+          "en": "Tongdao Dong Autonomous County",
+          "pinyin": "Tōngdào Dòngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "新晃侗族自治县",
+          "en": "Xinhuang Dong Autonomous County",
+          "pinyin": "Xīnhuǎng Dòngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "芷江侗族自治县",
+          "en": "Zhijiang Dong Autonomous County",
+          "pinyin": "Zhǐjiāng Dòngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "靖州苗族侗族自治县",
+          "en": "Jingzhou Miao and Dong Autonomous County",
+          "pinyin": "Jìngzhōu Miáozú Dòngzú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Gansu Province",
+      "total": 7,
+      "counties": [
+        {
+          "hanzi": "东乡族自治县",
+          "en": "Dongxiang Autonomous County",
+          "pinyin": "Dōngxiāngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "积石山保安族东乡族撒拉族自治县",
+          "en": "Jishishan Bonan, Dongxiang and Salar Autonomous County",
+          "pinyin": "Jīshíshān Bǎo'ānzú Dōngxiāngzú Sǎlāzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "张家川回族自治县",
+          "en": "Zhangjiachuan Hui Autonomous County",
+          "pinyin": "Zhāngjiāchuān Huízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "肃南裕固族自治县",
+          "en": "Sunan Yugur Autonomous County",
+          "pinyin": "Sùnán Yùgùzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "肃北蒙古族自治县",
+          "en": "Subei Mongolian Autonomous County",
+          "pinyin": "Sùběi Měnggǔzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "阿克塞哈萨克族自治县",
+          "en": "Aksai Kazakh Autonomous County",
+          "pinyin": "Ākèsài Hāsàkèzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "天祝藏族自治县",
+          "en": "Tianzhu Tibetan Autonomous County",
+          "pinyin": "Tiānzhù Zàngzú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Guangxi Zhuang Autonomous Region",
+      "total": 12,
+      "counties": [
+        {
+          "hanzi": "龙胜各族自治县",
+          "en": "Longsheng Various Nationalities Autonomous County",
+          "pinyin": "Lóngshèng Gèzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "金秀瑶族自治县",
+          "en": "Jinxiu Yao Nationality Autonomous County",
+          "pinyin": "Jīnxiù Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "融水苗族自治县",
+          "en": "Rongshui Miao Nationality Autonomous County",
+          "pinyin": "Róngshuǐ Miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "三江侗族自治县",
+          "en": "Sanjiang Dong Nationality Autonomous County",
+          "pinyin": "Sānjiāng Dòngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "隆林各族自治县",
+          "en": "Longlin Various Nationalities Autonomous County",
+          "pinyin": "Lónglín Gèzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "恭城瑶族自治县",
+          "en": "Gongcheng Yao Nationality Autonomous County",
+          "pinyin": "Gōngchéng Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "都安瑶族自治县",
+          "en": "Du'an Yao Nationality Autonomous County",
+          "pinyin": "Dū'ān Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "富川瑶族自治县",
+          "en": "Fuchuan Yao Nationality Autonomous County",
+          "pinyin": "Fùchuān Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "环江毛南族自治县",
+          "en": "Huanjiang Maonan Nationality Autonomous County",
+          "pinyin": "Huánjiāng Máonánzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "罗城仫佬族自治县",
+          "en": "Luocheng Mulao Nationality Autonomous County",
+          "pinyin": "Luóchéng Mùlǎozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "巴马瑶族自治县",
+          "en": "Bama Yao Nationality Autonomous County",
+          "pinyin": "Bāmǎ Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "大化瑶族自治县",
+          "en": "Dahua Yao Nationality Autonomous County",
+          "pinyin": "Dàhuà Yáozú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Guizhou Province",
+      "total": 11,
+      "counties": [
+        {
+          "hanzi": "三都水族自治县",
+          "en": "Sandu Shui Autonomous County",
+          "pinyin": "Sāndū shuǐzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "紫云苗族布依族自治县",
+          "en": "Ziyun Miao and Buyi Autonomous County",
+          "pinyin": "Zǐyún miáozú bùyīzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "关岭布依族苗族自治县",
+          "en": "Guanling Buyi and Miao Autonomous County",
+          "pinyin": "Guānlǐng bùyīzú miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "镇宁布依族苗族自治县",
+          "en": "Zhenning Buyi and Miao Autonomous County",
+          "pinyin": "Zhènníng bùyīzú miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "威宁彝族回族苗族自治县",
+          "en": "Weining Yi, Hui, and Miao Autonomous County",
+          "pinyin": "Wēiníng yízú huízú miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "玉屏侗族自治县",
+          "en": "Yuping Dong Autonomous County",
+          "pinyin": "Yùpíng dòngzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "松桃苗族自治县",
+          "en": "Songtao Miao Autonomous County",
+          "pinyin": "Sōngtáo miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "印江土家族苗族自治县",
+          "en": "Yinjiang Tujia and Miao Autonomous County",
+          "pinyin": "Yìnjiāng tǔjiāzú miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "沿河土家族自治县",
+          "en": "Yanhe Tujia Autonomous County",
+          "pinyin": "Yánhé tǔjiāzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "务川仡佬族苗族自治县",
+          "en": "Wuchuan Gelao and Miao Autonomous County",
+          "pinyin": "Wùchuān gēlǎozú miáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "道真仡佬族苗族自治县",
+          "en": "Daozhen Gelao and Miao Autonomous County",
+          "pinyin": "Dàozhēn gēlǎozú miáozú Zìzhìxiàn"
+        }
+      ]
+    },
+    {
+      "name": "Yunnan Province",
+      "total": 29,
+      "counties": [
+        {
+          "hanzi": "河口瑶族自治县",
+          "en": "Hekou Yao Autonomous County",
+          "pinyin": "Hékǒu Yáozú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "金平苗族瑶族傣族自治县",
+          "en": "Jinping Miao, Yao, and Dai Autonomous County",
+          "pinyin": "Jīnpíng Miáozú Yáozú Dǎizú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "泸西县",
+          "en": "Luxi County",
+          "pinyin": "Lúxī Xiàn"
+        },
+        {
+          "hanzi": "绿春县",
+          "en": "Lvchun County",
+          "pinyin": "Lǜchūn Xiàn"
+        },
+        {
+          "hanzi": "砚山县",
+          "en": "Yanshan County",
+          "pinyin": "Yànshān Xiàn"
+        },
+        {
+          "hanzi": "西畴县",
+          "en": "Xichou County",
+          "pinyin": "Xīchóu Xiàn"
+        },
+        {
+          "hanzi": "麻栗坡县",
+          "en": "Malipo County",
+          "pinyin": "Málìpō Xiàn"
+        },
+        {
+          "hanzi": "马关县",
+          "en": "Maguan County",
+          "pinyin": "Mǎguān Xiàn"
+        },
+        {
+          "hanzi": "丘北县",
+          "en": "Qiubei County",
+          "pinyin": "Qiūběi Xiàn"
+        },
+        {
+          "hanzi": "广南县",
+          "en": "Guangnan County",
+          "pinyin": "Guǎngnán Xiàn"
+        },
+        {
+          "hanzi": "富宁县",
+          "en": "Funing County",
+          "pinyin": "Fùníng Xiàn"
+        },
+        {
+          "hanzi": "孟连傣族拉祜族佤族自治县",
+          "en": "Menglian Dai, Lahu, and Wa Autonomous County",
+          "pinyin": "Mènglián Dǎizú Lāhùzú Wǎzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "澜沧拉祜族自治县",
+          "en": "Lancang Lahu Autonomous County",
+          "pinyin": "Láncāng Lāhùzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "西盟佤族自治县",
+          "en": "Ximeng Va Autonomous County",
+          "pinyin": "Xīméng Wǎzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "江城哈尼族彝族自治县",
+          "en": "Jiangcheng Hani and Yi Autonomous County",
+          "pinyin": "Jiāngchéng Hānízú Yízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "墨江哈尼族自治县",
+          "en": "Mojiang Hani Autonomous County",
+          "pinyin": "Mòjiāng Hānízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "景东彝族自治县",
+          "en": "Jingdong Yi Autonomous County",
+          "pinyin": "Jǐngdōng Yízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "景谷傣族彝族自治县",
+          "en": "Jinggu Dai and Yi Autonomous County",
+          "pinyin": "Jǐnggǔ Dǎizú Yízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "镇沅彝族哈尼族拉祜族自治县",
+          "en": "Zhenyuan Yi, Hani, and Lahu Autonomous County",
+          "pinyin": "Zhènyuán Yízú Hānízú Lāhùzú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "元江哈尼族彝族傣族自治县",
+          "en": "Yuanjiang Hani, Yi and Dai Autonomous County",
+          "pinyin": "Yuánjiāng Hānízú Yízú Dǎizú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "新平彝族傣族自治县",
+          "en": "Xinping Yi and Dai Autonomous County",
+          "pinyin": "Xīnpíng Yízú Dǎizú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "峨山彝族自治县",
+          "en": "Eshan Yi Autonomous County",
+          "pinyin": "Éshān Yízú Zìzhìxiàn"
+        },
+        {
+          "hanzi": "易门县",
+          "en": "Yimen County",
+          "pinyin": "Yìmén Xiàn"
+        },
+        {
+          "hanzi": "双柏县",
+          "en": "Shuangbai County",
+          "pinyin": "Shuāngbǎi Xiàn"
+        },
+        {
+          "hanzi": "牟定县",
+          "en": "Mouding County",
+          "pinyin": "Móudìng Xiàn"
+        },
+        {
+          "hanzi": "南华县",
+          "en": "Nanhua County",
+          "pinyin": "Nánhuá Xiàn"
+        },
+        {
+          "hanzi": "姚安县",
+          "en": "Yao'an County",
+          "pinyin": "Yáo'ān Xiàn"
+        },
+        {
+          "hanzi": "大姚县",
+          "en": "Dayao County",
+          "pinyin": "Dàyáo Xiàn"
+        },
+        {
+          "hanzi": "永仁县",
+          "en": "Yongren County",
+          "pinyin": "Yǒngrén Xiàn"
+        },
+        {
+          "hanzi": "元谋县",
+          "en": "Yuanmou County",
+          "pinyin": "Yuánmóu Xiàn"
+        },
+        {
+          "hanzi": "武定县",
+          "en": "Wuding County",
+          "pinyin": "Wǔdìng Xiàn"
+        }
+      ]
+    }
+  ]
+}

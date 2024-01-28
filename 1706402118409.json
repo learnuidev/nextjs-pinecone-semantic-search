@@ -1,0 +1,15 @@
+Certainly, translating the provided Chinese county name into English and Pinyin:
+
+```json
+{
+  "name": "Jilin Province",
+  "total": 1,
+  "counties": [
+    {
+      "hanzi": "长白朝鲜族自治县",
+      "en": "Changbai Korean Autonomous County",
+      "pinyin": "Chángbái Cháoxiǎnzú Zìzhìxiàn"
+    }
+  ]
+}
+```

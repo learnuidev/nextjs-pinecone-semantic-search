@@ -1,0 +1,163 @@
+```json
+{
+  "name": "Yunnan Province",
+  "total": 29,
+  "counties": [
+    {
+      "hanzi": "河口瑶族自治县",
+      "en": "Hekou Yao Autonomous County",
+      "pinyin": "Hékǒu Yáozú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "金平苗族瑶族傣族自治县",
+      "en": "Jinping Miao, Yao, and Dai Autonomous County",
+      "pinyin": "Jīnpíng Miáozú Yáozú Dǎizú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "泸西县",
+      "en": "Luxi County",
+      "pinyin": "Lúxī Xiàn"
+    },
+    {
+      "hanzi": "绿春县",
+      "en": "Lvchun County",
+      "pinyin": "Lǜchūn Xiàn"
+    },
+    {
+      "hanzi": "砚山县",
+      "en": "Yanshan County",
+      "pinyin": "Yànshān Xiàn"
+    },
+    {
+      "hanzi": "西畴县",
+      "en": "Xichou County",
+      "pinyin": "Xīchóu Xiàn"
+    },
+    {
+      "hanzi": "麻栗坡县",
+      "en": "Malipo County",
+      "pinyin": "Málìpō Xiàn"
+    },
+    {
+      "hanzi": "马关县",
+      "en": "Maguan County",
+      "pinyin": "Mǎguān Xiàn"
+    },
+    {
+      "hanzi": "丘北县",
+      "en": "Qiubei County",
+      "pinyin": "Qiūběi Xiàn"
+    },
+    {
+      "hanzi": "广南县",
+      "en": "Guangnan County",
+      "pinyin": "Guǎngnán Xiàn"
+    },
+    {
+      "hanzi": "富宁县",
+      "en": "Funing County",
+      "pinyin": "Fùníng Xiàn"
+    },
+    {
+      "hanzi": "孟连傣族拉祜族佤族自治县",
+      "en": "Menglian Dai, Lahu, and Wa Autonomous County",
+      "pinyin": "Mènglián Dǎizú Lāhùzú Wǎzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "澜沧拉祜族自治县",
+      "en": "Lancang Lahu Autonomous County",
+      "pinyin": "Láncāng Lāhùzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "西盟佤族自治县",
+      "en": "Ximeng Va Autonomous County",
+      "pinyin": "Xīméng Wǎzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "江城哈尼族彝族自治县",
+      "en": "Jiangcheng Hani and Yi Autonomous County",
+      "pinyin": "Jiāngchéng Hānízú Yízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "墨江哈尼族自治县",
+      "en": "Mojiang Hani Autonomous County",
+      "pinyin": "Mòjiāng Hānízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "景东彝族自治县",
+      "en": "Jingdong Yi Autonomous County",
+      "pinyin": "Jǐngdōng Yízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "景谷傣族彝族自治县",
+      "en": "Jinggu Dai and Yi Autonomous County",
+      "pinyin": "Jǐnggǔ Dǎizú Yízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "镇沅彝族哈尼族拉祜族自治县",
+      "en": "Zhenyuan Yi, Hani, and Lahu Autonomous County",
+      "pinyin": "Zhènyuán Yízú Hānízú Lāhùzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "元江哈尼族彝族傣族自治县",
+      "en": "Yuanjiang Hani, Yi and Dai Autonomous County",
+      "pinyin": "Yuánjiāng Hānízú Yízú Dǎizú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "新平彝族傣族自治县",
+      "en": "Xinping Yi and Dai Autonomous County",
+      "pinyin": "Xīnpíng Yízú Dǎizú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "峨山彝族自治县",
+      "en": "Eshan Yi Autonomous County",
+      "pinyin": "Éshān Yízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "易门县",
+      "en": "Yimen County",
+      "pinyin": "Yìmén Xiàn"
+    },
+    {
+      "hanzi": "双柏县",
+      "en": "Shuangbai County",
+      "pinyin": "Shuāngbǎi Xiàn"
+    },
+    {
+      "hanzi": "牟定县",
+      "en": "Mouding County",
+      "pinyin": "Móudìng Xiàn"
+    },
+    {
+      "hanzi": "南华县",
+      "en": "Nanhua County",
+      "pinyin": "Nánhuá Xiàn"
+    },
+    {
+      "hanzi": "姚安县",
+      "en": "Yao'an County",
+      "pinyin": "Yáo'ān Xiàn"
+    },
+    {
+      "hanzi": "大姚县",
+      "en": "Dayao County",
+      "pinyin": "Dàyáo Xiàn"
+    },
+    {
+      "hanzi": "永仁县",
+      "en": "Yongren County",
+      "pinyin": "Yǒngrén Xiàn"
+    },
+    {
+      "hanzi": "元谋县",
+      "en": "Yuanmou County",
+      "pinyin": "Yuánmóu Xiàn"
+    },
+    {
+      "hanzi": "武定县",
+      "en": "Wuding County",
+      "pinyin": "Wǔdìng Xiàn"
+    }
+  ]
+}
+```

@@ -1,0 +1,20 @@
+Certainly! Below is the information filled in for the counties in Hubei Province, including the English names and their pinyin transliterations.
+
+```json
+{
+  "name": "Hubei Province",
+  "total": 2,
+  "counties": [
+    {
+      "hanzi": "长阳土家族自治县",
+      "en": "Changyang Tujia Autonomous County",
+      "pinyin": "Chángyáng Tǔjiāzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "五峰土家族自治县",
+      "en": "Wufeng Tujia Autonomous County",
+      "pinyin": "Wǔfēng Tǔjiāzú Zìzhìxiàn"
+    }
+  ]
+}
+```

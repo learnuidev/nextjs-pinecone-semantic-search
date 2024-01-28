@@ -1,0 +1,45 @@
+Below is the data filled with the English translations and pinyin for the autonomous counties in Qinghai Province:
+
+```json
+{
+  "name": "Qinghai Province",
+  "total": 7,
+  "counties": [
+    {
+      "hanzi": "互助土族自治县",
+      "en": "Huzhu Tu Autonomous County",
+      "pinyin": "Hùzhù Tǔzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "大通回族土族自治县",
+      "en": "Datong Hui and Tu Autonomous County",
+      "pinyin": "Dàtōng Huízú Tǔzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "民和回族土族自治县",
+      "en": "Minhe Hui and Tu Autonomous County",
+      "pinyin": "Mín hé Huízú Tǔzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "化隆回族自治县",
+      "en": "Hualong Hui Autonomous County",
+      "pinyin": "Huàlóng Huízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "循化撒拉族自治县",
+      "en": "Xunhua Salar Autonomous County",
+      "pinyin": "Xúnhuà Sǎlāzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "门源回族自治县",
+      "en": "Menyuan Hui Autonomous County",
+      "pinyin": "Ményuán Huízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "祁连县",
+      "en": "Qilian County",
+      "pinyin": "Qílián Xiàn"
+    }
+  ]
+}
+```

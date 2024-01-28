@@ -1,0 +1,43 @@
+```json
+{
+  "name": "Tibet Autonomous Region",
+  "total": 7,
+  "counties": [
+    {
+      "hanzi": "芒康县",
+      "en": "Mangkang County",
+      "pinyin": "Mángkāng Xiàn"
+    },
+    {
+      "hanzi": "左贡县",
+      "en": "Zogang County",
+      "pinyin": "Zuǒgòng Xiàn"
+    },
+    {
+      "hanzi": "察隅县",
+      "en": "Chayu County",
+      "pinyin": "Cháyú Xiàn"
+    },
+    {
+      "hanzi": "朗县",
+      "en": "Lang County",
+      "pinyin": "Láng Xiàn"
+    },
+    {
+      "hanzi": "墨脱县",
+      "en": "Motuo County",
+      "pinyin": "Mòtuō Xiàn"
+    },
+    {
+      "hanzi": "米林县",
+      "en": "Milin County",
+      "pinyin": "Mǐlín Xiàn"
+    },
+    {
+      "hanzi": "林芝县",
+      "en": "Nyingchi County",
+      "pinyin": "Línzhī Xiàn"
+    }
+  ]
+}
+```

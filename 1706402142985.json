@@ -1,0 +1,43 @@
+```json
+{
+  "name": "Gansu Province",
+  "total": 7,
+  "counties": [
+    {
+      "hanzi": "东乡族自治县",
+      "en": "Dongxiang Autonomous County",
+      "pinyin": "Dōngxiāngzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "积石山保安族东乡族撒拉族自治县",
+      "en": "Jishishan Bonan, Dongxiang and Salar Autonomous County",
+      "pinyin": "Jīshíshān Bǎo'ānzú Dōngxiāngzú Sǎlāzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "张家川回族自治县",
+      "en": "Zhangjiachuan Hui Autonomous County",
+      "pinyin": "Zhāngjiāchuān Huízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "肃南裕固族自治县",
+      "en": "Sunan Yugur Autonomous County",
+      "pinyin": "Sùnán Yùgùzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "肃北蒙古族自治县",
+      "en": "Subei Mongolian Autonomous County",
+      "pinyin": "Sùběi Měnggǔzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "阿克塞哈萨克族自治县",
+      "en": "Aksai Kazakh Autonomous County",
+      "pinyin": "Ākèsài Hāsàkèzú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "天祝藏族自治县",
+      "en": "Tianzhu Tibetan Autonomous County",
+      "pinyin": "Tiānzhù Zàngzú Zìzhìxiàn"
+    }
+  ]
+}
+```

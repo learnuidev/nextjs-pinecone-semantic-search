@@ -1,0 +1,13 @@
+```json
+{
+  "name": "Heilongjiang Province",
+  "total": 1,
+  "counties": [
+    {
+      "hanzi": "杜尔伯特蒙古族自治县",
+      "en": "Duerbote Mongol Autonomous County",
+      "pinyin": "Dù'ěrbótè Ménggǔzú Zìzhìxiàn"
+    }
+  ]
+}
+```

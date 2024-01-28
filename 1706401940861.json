@@ -1,0 +1,151 @@
+{
+  "name": "Xinjiang Uygur Autonomous Region",
+  "total": 27,
+  "counties": [
+    {
+      "hanzi": "巴里坤哈萨克自治县",
+      "en": "Barkol Kazakh Autonomous County",
+      "pinyin": "Bālǐkūn Hāsàkè Zìzhìxiàn"
+    },
+    {
+      "hanzi": "木垒哈萨克自治县",
+      "en": "Mori Kazakh Autonomous County",
+      "pinyin": "Mùlěi Hāsàkè Zìzhìxiàn"
+    },
+    {
+      "hanzi": "察布查尔锡伯自治县",
+      "en": "Qapqal Xibe Autonomous County",
+      "pinyin": "Chábùchá'ěr Xībó Zìzhìxiàn"
+    },
+    {
+      "hanzi": "霍城县",
+      "en": "Huocheng County",
+      "pinyin": "Huòchéng Xiàn"
+    },
+    {
+      "hanzi": "巩留县",
+      "en": "Gongliu County",
+      "pinyin": "Gǒngliú Xiàn"
+    },
+    {
+      "hanzi": "新源县",
+      "en": "Xinyuan County",
+      "pinyin": "Xīnyuán Xiàn"
+    },
+    {
+      "hanzi": "昭苏县",
+      "en": "Zhaosu County",
+      "pinyin": "Zhāosū Xiàn"
+    },
+    {
+      "hanzi": "特克斯县",
+      "en": "Tekes County",
+      "pinyin": "Tèkèsī Xiàn"
+    },
+    {
+      "hanzi": "尼勒克县",
+      "en": "Nileke County",
+      "pinyin": "Nílèkè Xiàn"
+    },
+    {
+      "hanzi": "阿克陶县",
+      "en": "Akto County",
+      "pinyin": "Ākètáo Xiàn"
+    },
+    {
+      "hanzi": "阿合奇县",
+      "en": "Akqi County",
+      "pinyin": "Āhéqí Xiàn"
+    },
+    {
+      "hanzi": "乌恰县",
+      "en": "Wuqia County",
+      "pinyin": "Wūqià Xiàn"
+    },
+    {
+      "hanzi": "阿图什市",
+      "en": "Artux City",
+      "pinyin": "Ātúshí Shì"
+    },
+    {
+      "hanzi": "柯坪县",
+      "en": "Kalpin County",
+      "pinyin": "Kēpíng Xiàn"
+    },
+    {
+      "hanzi": "温宿县",
+      "en": "Wensu County",
+      "pinyin": "Wēnsù Xiàn"
+    },
+    {
+      "hanzi": "沙雅县",
+      "en": "Shaya County",
+      "pinyin": "Shāyǎ Xiàn"
+    },
+    {
+      "hanzi": "新和县",
+      "en": "Xinhe County",
+      "pinyin": "Xīnhé Xiàn"
+    },
+    {
+      "hanzi": "拜城县",
+      "en": "Baicheng County",
+      "pinyin": "Bàichéng Xiàn"
+    },
+    {
+      "hanzi": "乌什县",
+      "en": "Uqturpan County",
+      "pinyin": "Wūshí Xiàn"
+    },
+    {
+      "hanzi": "阿克苏市",
+      "en": "Aksu City",
+      "pinyin": "Ākèsū Shì"
+    },
+    {
+      "hanzi": "库车县",
+      "en": "Kuche County",
+      "pinyin": "Kùchē Xiàn"
+    },
+    {
+      "hanzi": "尉犁县",
+      "en": "Yuli County",
+      "pinyin": "Yùlí Xiàn"
+    },
+    {
+      "hanzi": "轮台县",
+      "en": "Luntai County",
+      "pinyin": "Lúntái Xiàn"
+    },
+    {
+      "hanzi": "若羌县",
+      "en": "Ruoqiang County",
+      "pinyin": "Ruòqiāng Xiàn"
+    },
+    {
+      "hanzi": "且末县",
+      "en": "Qiemo County",
+      "pinyin": "Qiěmò Xiàn"
+    },
+    {
+      "hanzi": "焉耆回族自治县",
+      "en": "Yanqi Hui Autonomous County",
+      "pinyin": "Yānqí Huízú Zìzhìxiàn"
+    },
+    {
+      "hanzi": "和静县",
+      "en": "Hejing County",
+      "pinyin": "Héjìng Xiàn"
+    },
+    {
+      "hanzi": "和硕县",
+      "en": "Hoxud County",
+      "pinyin": "Héshuò Xiàn"
+    },
+    {
+      "hanzi": "博湖县",
+      "en": "Bohu County",
+      "pinyin": "Bóhú Xiàn"
+    }
+  ]
+}
