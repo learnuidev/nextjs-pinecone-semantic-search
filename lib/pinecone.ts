@@ -8,5 +8,3 @@ const pinecone = new Pinecone({
 export const searchIndexName = "cuzo-embedding-search";
 
 export const searchIndex = pinecone.Index(searchIndexName);
-
-console.log("SEARCH INDEX", searchIndex);
