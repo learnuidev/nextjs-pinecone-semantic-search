@@ -13,7 +13,7 @@ export async function POST(req: Request) {
   const { query } = await req.json();
 
   const pinecone = new Pinecone({
-    apiKey: appConfig.pineconeApiKey,
+    apiKey: appConfig.pineconeAPIKey,
   });
 
   const text = await queryPineconeVectorStoreAndQueryLLM(

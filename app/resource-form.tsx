@@ -4,13 +4,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
 import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useListSearchResultsQuery } from "@/domain/search/search.queries";
+import { useListVideosQuery } from "./api/list-videos/query";
 
 export function ResourceForm() {
   const [type, setType] = useState("video");
@@ -87,6 +88,14 @@ export function SearchForm() {
   const { data, isLoading } = useListSearchResultsQuery({
     query,
   });
+
+  useEffect(() => {
+    setContent(query);
+  }, [query]);
+
+  const { data: videos, isLoading: isVideosLoading } = useListVideosQuery({
+    query,
+  });
   return (
     <div className="my-8">
       <Input
@@ -121,6 +130,13 @@ export function SearchForm() {
       ) : (
         <code className="block my-8">
           <pre>{JSON.stringify(data?.queryResponse?.matches, null, 2)}</pre>
+        </code>
+      )}
+      {isVideosLoading ? (
+        <p className="my-16 text-xl font-light text-center">Loading</p>
+      ) : (
+        <code className="block my-8">
+          <pre>{JSON.stringify(videos, null, 2)}</pre>
         </code>
       )}
     </div>

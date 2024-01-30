@@ -1,9 +1,11 @@
 export interface IAppConfig {
-  openAIApiKey: string;
-  pineconeApiKey: string;
+  openAIAPIKey: string;
+  pineconeAPIKey: string;
+  youtubeAPIKey: string;
 }
 
 export const appConfig = {
-  openAIApiKey: process.env.OPENAI_API_KEY,
-  pineconeApiKey: process.env.PINECONE_API_KEY,
+  youtubeAPIKey: process.env.YOUTUBE_API_KEY,
+  openAIAPIKey: process.env.OPENAI_API_KEY,
+  pineconeAPIKey: process.env.PINECONE_API_KEY,
 } as IAppConfig;

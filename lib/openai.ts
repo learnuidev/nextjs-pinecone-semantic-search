@@ -1,7 +1,7 @@
 import { appConfig } from "@/config/app-config";
 import OpenAI from "openai";
 
-export const openai = new OpenAI({ apiKey: appConfig.openAIApiKey });
+export const openai = new OpenAI({ apiKey: appConfig.openAIAPIKey });
 
 export async function getEmbedding(text: string) {
   const response = await openai.embeddings.create({
