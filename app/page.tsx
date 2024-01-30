@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useListSearchResultsQuery } from "@/domain/search/search.queries";
 
-export function ResourceForm() {
+function ResourceForm() {
   const [type, setType] = useState("video");
   const [content, setContent] = useState("");
 
@@ -73,7 +73,7 @@ export function ResourceForm() {
     </div>
   );
 }
-export function SearchForm() {
+function SearchForm() {
   const [content, setContent] = useState("");
   const router = useRouter();
 

@@ -4,7 +4,7 @@
     {
       "name": "Xinjiang Uygur Autonomous Region",
       "total": 27,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "巴里坤哈萨克自治县",
           "en": "Barkol Kazakh Autonomous County",
@@ -155,7 +155,7 @@
     {
       "name": "Jilin Province",
       "total": 1,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "长白朝鲜族自治县",
           "en": "Changbai Korean Autonomous County",
@@ -166,7 +166,7 @@
     {
       "name": "Heilongjiang Province",
       "total": 1,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "杜尔伯特蒙古族自治县",
           "en": "Duerbote Mongol Autonomous County",
@@ -177,7 +177,7 @@
     {
       "name": "Hubei Province",
       "total": 2,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "长阳土家族自治县",
           "en": "Changyang Tujia Autonomous County",
@@ -193,7 +193,7 @@
     {
       "name": "Ningxia Hui Autonomous Region",
       "total": 2,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "泾源县",
           "en": "Jingyuan County",
@@ -209,7 +209,7 @@
     {
       "name": "Tibet Autonomous Region",
       "total": 7,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "芒康县",
           "en": "Mangkang County",
@@ -250,7 +250,7 @@
     {
       "name": "Inner Mongolia Autonomous Region",
       "total": 3,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "莫力达瓦达斡尔族自治旗",
           "en": "Morin Dawa Daur Autonomous Banner",
@@ -271,7 +271,7 @@
     {
       "name": "Qinghai Province",
       "total": 7,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "互助土族自治县",
           "en": "Huzhu Tu Autonomous County",
@@ -312,7 +312,7 @@
     {
       "name": "Hunan Province",
       "total": 7,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "城步苗族自治县",
           "en": "Chengbu Miao Autonomous County",
@@ -353,7 +353,7 @@
     {
       "name": "Gansu Province",
       "total": 7,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "东乡族自治县",
           "en": "Dongxiang Autonomous County",
@@ -394,7 +394,7 @@
     {
       "name": "Guangxi Zhuang Autonomous Region",
       "total": 12,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "龙胜各族自治县",
           "en": "Longsheng Various Nationalities Autonomous County",
@@ -460,7 +460,7 @@
     {
       "name": "Guizhou Province",
       "total": 11,
-      "counties": [
+      "autonomous_counties": [
         {
           "hanzi": "三都水族自治县",
           "en": "Sandu Shui Autonomous County",
@@ -522,6 +522,137 @@
       "name": "Yunnan Province",
       "total": 29,
       "counties": [
+        "Anning",
+        "Bai",
+        "Binchuan",
+        "Changning",
+        "Chenggong",
+        "Chengjiang",
+        "Chuxiong",
+        "Dali",
+        "Dayao",
+        "Dayi",
+        "Eshan",
+        "Fumin",
+        "Fuyuan",
+        "Gucheng",
+        "Hekou",
+        "Honghe",
+        "Huaping",
+        "Huaning",
+        "Huize",
+        "Jianchuan",
+        "Jiangchuan",
+        "Jinping",
+        "Kaiyuan",
+        "Kunming",
+        "Lanping",
+        "Lijiang",
+        "Liming",
+        "Liuku",
+        "Liupanshui",
+        "Longchuan",
+        "Longling",
+        "Longyang",
+        "Lufeng",
+        "Luquan",
+        "Luxi",
+        "Maguan",
+        "Malipo",
+        "Menghai",
+        "Mengla",
+        "Menglian",
+        "Mile",
+        "Mouding",
+        "Nanjian",
+        "Nanhua",
+        "Ninger",
+        "Ninglang",
+        "Panzhihua",
+        "Pingbian",
+        "Qiaojia",
+        "Qilin",
+        "Qujing",
+        "Ruili",
+        "Shangrila",
+        "Shidian",
+        "Shiping",
+        "Shizong",
+        "Shuangbai",
+        "Shuangjiang",
+        "Shuanglang",
+        "Shuangyang",
+        "Simao",
+        "Songming",
+        "Suining",
+        "Tacheng",
+        "Tengchong",
+        "Weishan",
+        "Weixin",
+        "Wenshan",
+        "Wuding",
+        "Wuhua",
+        "Wuming",
+        "Wumeng",
+        "Xiangyun",
+        "Xichou",
+        "Ximeng",
+        "Xinping",
+        "Xishan",
+        "Xizhou",
+        "Xuanwei",
+        "Yanjin",
+        "Yanshan",
+        "Yaoan",
+        "Yiliang",
+        "Yimen",
+        "Yingjiang",
+        "Yongde",
+        "Yongping",
+        "Yongren",
+        "Yongshan",
+        "Yongsheng",
+        "Yuanjiang",
+        "Yuanmou",
+        "Yuheng",
+        "Yunlong",
+        "Yunnan",
+        "Yunxian",
+        "Zhanyi",
+        "Zhaotong",
+        "Zhenkang",
+        "Zhenxiong",
+        "Zhenyuan",
+        "Binchuan",
+        "Chuxiong",
+        "Dayao",
+        "Eshan",
+        "Fumin",
+        "Fuyuan",
+        "Gucheng",
+        "Hekou",
+        "Honghe",
+        "Huaping",
+        "Huaning",
+        "Huize",
+        "Jianchuan",
+        "Jiangchuan",
+        "Jinping",
+        "Kaiyuan",
+        "Kunming",
+        "Lanping",
+        "Lijiang",
+        "Liming",
+        "Liuku",
+        "Liupanshui",
+        "Longchuan",
+        "Longling",
+        "Longyang",
+        "Lufeng",
+        "Luquan",
+        "Luxi"
+      ],
+      "autonomous_counties": [
         {
           "hanzi": "河口瑶族自治县",
           "en": "Hekou Yao Autonomous County",

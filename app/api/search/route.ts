@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   );
 
   text.queryResponse.matches = text.queryResponse.matches.filter(
-    (match) => match.score > 0.76
+    (match: { score: number }) => match.score > 0.76
   );
 
   return Response.json(text);
