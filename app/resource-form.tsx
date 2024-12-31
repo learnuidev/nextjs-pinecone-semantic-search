@@ -275,7 +275,7 @@ export function SearchForm() {
         </h1>
       </div>
 
-      <div className="max-w-4xl mb-8">
+      <div className="w-full sm:max-w-4xl mb-8">
         {currentSource?.length > 0 && (
           <h1 onClick={() => [setRevealSource((val) => !val)]}>
             Found: {currentSource?.length}{" "}
@@ -289,9 +289,11 @@ export function SearchForm() {
       </div>
 
       {revealSource && (
-        <div className="max-w-4xl">
+        <div className="max-w-3xl">
           <code>
-            <pre>{JSON.stringify(currentSource, null, 4)}</pre>
+            <pre className="truncate">
+              {JSON.stringify(currentSource, null, 4)}
+            </pre>
           </code>
         </div>
       )}
