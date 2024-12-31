@@ -128,9 +128,11 @@ export function SearchForm() {
       {isLoading ? (
         <p className="my-16 text-xl font-light text-center">Loading</p>
       ) : (
-        <code className="block my-8">
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </code>
+        <div className="max-w-4xl">
+          <code className="block my-8">
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+          </code>
+        </div>
       )}
       {/* {isVideosLoading ? (
         <p className="my-16 text-xl font-light text-center">Loading</p>

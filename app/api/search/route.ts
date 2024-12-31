@@ -1,13 +1,9 @@
 import { appConfig } from "@/config/app-config";
-// import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
-// import { getEmbedding } from "@/lib/openai";
-// import { searchIndex, searchIndexName } from "@/lib/pinecone";
 import { Pinecone } from "@pinecone-database/pinecone";
 import { queryPineconeVectorStoreAndQueryLLM } from "./utils";
-import { CohereClient } from "cohere-ai";
-import * as cohereApi from "@/lib/cohere.api";
 
-const cohereClient = new CohereClient({ token: appConfig.cohereAPIKey });
+import * as cohereApi from "@/lib/cohere.api";
+import { searchIndexName } from "@/lib/pinecone";
 
 export async function POST(req: Request) {
   const { query } = await req.json();
@@ -18,42 +14,36 @@ export async function POST(req: Request) {
 
   const pineconeResponse = await queryPineconeVectorStoreAndQueryLLM(
     pinecone,
-    "cuzo-embedding-search",
+    searchIndexName,
     query
   );
 
-  const docs = pineconeResponse.queryResponse.matches.map((match: any) => {
-    // return match.metadata.content;
-    return {
-      // ...match,
-      text: match.metadata.content,
-    };
-  });
+  const docs = pineconeResponse.queryResponse.matches.map(
+    (match: any, idx: number) => {
+      return {
+        ...match,
+        text: match.metadata.content,
+      };
+    }
+  );
 
-  console.log("DOCS", docs);
-
-  // import { CohereClient } from "cohere-ai";
-
-  // const cohereClient = new CohereClient({ token: appConfig.cohereAPIKey });
-
-  // const reranked = await cohereClient.rerank({
-  //   query,
-  //   documents: docs,
-  //   topN: 3,
-  // });
   const reranked = await cohereApi.rerank({
     query,
     documents: docs,
     topN: 3,
   });
 
-  // pineconeResponse.queryResponse.matches =
-  //   pineconeResponse.queryResponse.matches.filter(
-  //     (match: { score: number }) => match.score > 0.76
-  //   );
+  const rerankedAndSorted = pineconeResponse.queryResponse.matches
+    ?.map((match: any, idx: any) => {
+      const rankIndex = reranked?.results?.find((r: any) => r?.index === idx);
+      return {
+        ...match,
+        // cohereScore: 100,
+        cohereScore: rankIndex?.relevance_score,
+      };
+    })
+    ?.sort((a: any, b: any) => b?.cohereScore - a?.cohereScore)
+    ?.filter((result: any) => result?.cohereScore > 0.8);
 
-  return Response.json({
-    original: pineconeResponse,
-    cohere: reranked,
-  });
+  return Response.json(rerankedAndSorted);
 }

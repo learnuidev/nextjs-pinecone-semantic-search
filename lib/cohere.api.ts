@@ -18,7 +18,6 @@ export const rerank = async (params: CohereRerankParams) => {
     documents: documents,
   };
 
-  console.log("API KEY", appConfig.cohereAPIKey);
   const response = await fetch(`${COHERE_API_URL}/v1/rerank`, {
     method: "POST",
     headers: {
