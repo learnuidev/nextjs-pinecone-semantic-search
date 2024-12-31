@@ -11,7 +11,6 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
   indexName: string,
   question: string
 ) => {
-  console.log("APP CONFIG", appConfig);
   // 1. Start query process
   console.log(`Querying Pinecone vector store: ${question}`);
   // 2. Retrieve the Pinecone index

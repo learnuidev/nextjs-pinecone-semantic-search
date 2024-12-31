@@ -93,9 +93,9 @@ export function SearchForm() {
     setContent(query);
   }, [query]);
 
-  const { data: videos, isLoading: isVideosLoading } = useListVideosQuery({
-    query,
-  });
+  // const { data: videos, isLoading: isVideosLoading } = useListVideosQuery({
+  //   query,
+  // });
   return (
     <div className="my-8">
       <Input
@@ -129,16 +129,16 @@ export function SearchForm() {
         <p className="my-16 text-xl font-light text-center">Loading</p>
       ) : (
         <code className="block my-8">
-          <pre>{JSON.stringify(data?.queryResponse?.matches, null, 2)}</pre>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
         </code>
       )}
-      {isVideosLoading ? (
+      {/* {isVideosLoading ? (
         <p className="my-16 text-xl font-light text-center">Loading</p>
       ) : (
         <code className="block my-8">
           <pre>{JSON.stringify(videos, null, 2)}</pre>
         </code>
-      )}
+      )} */}
     </div>
   );
 }

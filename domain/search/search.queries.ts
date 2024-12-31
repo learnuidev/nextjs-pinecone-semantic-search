@@ -15,5 +15,6 @@ export function useListSearchResultsQuery(
       return response;
     },
     enabled: Boolean(params.query),
+    retry: false,
   });
 }
