@@ -1,9 +1,4 @@
-import { appConfig } from "@/config/app-config";
-import { Pinecone } from "@pinecone-database/pinecone";
-
-const pinecone = new Pinecone({
-  apiKey: appConfig.pineconeAPIKey,
-});
+import { pinecone } from "./pinecone/pinecone";
 
 export const searchIndexName = "cuzo-embedding-search";
 
