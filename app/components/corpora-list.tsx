@@ -4,10 +4,15 @@ import { Button } from "@/components/ui/button";
 
 import { Badge } from "@/components/ui/badge";
 import { Copy, MoreVertical } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useCorpusParams } from "../corpus/hooks/use-corpus-params";
 import { useListCorporaQuery } from "../hooks/use-list-corpora-query";
 
 export function CorporaList() {
   const { data: corpora } = useListCorporaQuery();
+  const { corpusName } = useCorpusParams();
+
+  const router = useRouter();
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
@@ -28,7 +33,13 @@ export function CorporaList() {
               <Button variant="ghost" size="icon">
                 <MoreVertical className="h-4 w-4" />
               </Button>
-              <Button>Connect</Button>
+              <Button
+                onClick={() => {
+                  router.push(`/corpus/${index?.name}`);
+                }}
+              >
+                Connect
+              </Button>
             </div>
           </div>
           <div className="space-y-4">
