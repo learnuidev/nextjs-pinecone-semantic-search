@@ -2,11 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
-import { AddResourceParams } from "@/domain/resource/resource.types";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 import { useDebouncedCallback } from "use-debounce";
 
 import {
@@ -16,72 +13,8 @@ import {
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { useChat } from "ai/react";
-import Link from "next/link";
-import { useCorpusParams } from "../hooks/use-corpus-params";
+import { useCorpusParams } from "../../hooks/use-corpus-params";
 
-export function ResourceForm() {
-  const { corpusName } = useCorpusParams();
-  const [type, setType] = useState("video");
-  const [content, setContent] = useState("");
-
-  const addResourceMutation = useAddResourceMutation();
-
-  const resetFormHandler = () => {
-    setContent("");
-  };
-  return (
-    <div className="my-8">
-      <RadioGroup
-        defaultValue={type}
-        onValueChange={(value: string) => {
-          setType(value);
-        }}
-        className="flex space-x-4 justify-center items-center"
-      >
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="video" id="r1" />
-          <Label htmlFor="r1">Video</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="audio" id="r3" />
-          <Label htmlFor="r3">Audio</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="website" id="r3" />
-          <Label htmlFor="r3">Website</Label>
-        </div>
-      </RadioGroup>
-
-      <textarea
-        onChange={(event) => {
-          setContent(event.target.value);
-        }}
-        value={content}
-        className="my-4 md:w-[600px] focus-visible:ring-0"
-      />
-
-      <Button
-        onClick={() => {
-          const inputData = {
-            type,
-            content,
-            userId: "learnuidev@gmail.com",
-            corpusName,
-          } as AddResourceParams;
-          addResourceMutation.mutateAsync(inputData).then((res) => {
-            // alert(JSON.stringify(res));
-            resetFormHandler();
-          });
-        }}
-        className="mr-2"
-      >
-        {" "}
-        Add Resource
-      </Button>
-      <Button onClick={resetFormHandler}>Clear</Button>
-    </div>
-  );
-}
 export function SearchForm() {
   const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
@@ -248,15 +181,14 @@ export function SearchForm() {
       </div>
 
       <div>
-        <p dangerouslySetInnerHTML={{ __html: lastAnswer?.content }} />
+        <Markdown>{lastAnswer?.content}</Markdown>
+        {/* <p dangerouslySetInnerHTML={{ __html: lastAnswer?.content }} /> */}
       </div>
 
       {revealSource && (
         <div className="max-w-3xl">
           <code>
-            <pre className="truncate">
-              {JSON.stringify(currentSource, null, 4)}
-            </pre>
+            <pre className="">{JSON.stringify(currentSource, null, 4)}</pre>
           </code>
         </div>
       )}

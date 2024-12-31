@@ -3,12 +3,14 @@
 import { Suspense } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ResourceForm, SearchForm } from "./resource-form";
+
 import { useCorpusParams } from "../hooks/use-corpus-params";
 import { useDescribeCorpusQuery } from "../hooks/use-describe-corpus-query";
 
 import { Copy, MoreVertical, XIcon } from "lucide-react";
 import Link from "next/link";
+import { ResourceForm } from "./components/resource-form";
+import { SearchForm } from "./components/search-form";
 
 export default function CorpusItem() {
   const { corpusName } = useCorpusParams();
@@ -51,9 +53,6 @@ export default function CorpusItem() {
 
       <section>
         <h1 className="my-4 text-2xl">{corpusName}</h1>
-        {/* <code>
-          <pre>{JSON.stringify(corpus, null, 4)}</pre>
-        </code> */}
       </section>
       <Suspense>
         <Tabs defaultValue="search" className="">
