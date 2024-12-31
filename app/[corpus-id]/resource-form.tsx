@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
 import { AddResourceParams } from "@/domain/resource/resource.types";
 import { useEffect, useState } from "react";
-import { useDebounce, useDebouncedCallback } from "use-debounce";
+import { useDebouncedCallback } from "use-debounce";
 
 import {
   useListSearchResultsMutation,
