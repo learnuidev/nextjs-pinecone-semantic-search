@@ -7,6 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
 import { AddResourceParams } from "@/domain/resource/resource.types";
 import { useEffect, useState } from "react";
+import { useDebounce, useDebouncedCallback } from "use-debounce";
 
 import {
   useListSearchResultsMutation,
@@ -15,6 +16,7 @@ import {
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { useChat } from "ai/react";
+import Link from "next/link";
 
 export function ResourceForm() {
   const [type, setType] = useState("video");
@@ -48,7 +50,7 @@ export function ResourceForm() {
         </div>
       </RadioGroup>
 
-      <Input
+      <textarea
         onChange={(event) => {
           setContent(event.target.value);
         }}
@@ -78,14 +80,93 @@ export function ResourceForm() {
   );
 }
 export function SearchForm() {
+  const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
   const router = useRouter();
 
-  const [sources, setSources] = useState<any>(null);
+  const [sources, setSources] = useState<any>({});
+  const [responses, setResponses] = useState({});
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "api/stream-search",
-  });
+  const { messages, input, handleInputChange, setMessages, handleSubmit } =
+    useChat({
+      api: "api/stream-search",
+
+      onFinish: (msg: any) => {
+        console.log("DONE", JSON.stringify(msg));
+
+        // const answerIndex = messages?.findIndex(
+        //   (message) => message?.id === msg?.id
+        // );
+
+        // alert(answerIndex);
+
+        // const questionIndex = answerIndex - 1;
+
+        // const source = sources?.[questionIndex];
+
+        // alert(
+        //   JSON.stringify(
+        //     {
+        //       question: messages?.[questionIndex],
+        //       answer: msg,
+        //       sources: source,
+        //     },
+        //     null,
+        //     4
+        //   )
+        // );
+
+        debouncedAlert(msg);
+      },
+    });
+
+  const delaySetMessages = useDebouncedCallback((msgs) => {
+    setMessages(msgs);
+  }, 1000);
+
+  // useEffect(() => {
+  //   delaySetMessages([{ role: "user", content: "yoo" }]);
+  // }, []);
+
+  const debouncedAlert = useDebouncedCallback(
+    // function
+    (msg) => {
+      console.log("MESSAGES", messages);
+      console.log("MSG", msg);
+
+      const answerIndex = messages?.findIndex(
+        (message) => message?.id === msg?.id
+      );
+
+      console.log("AI", answerIndex);
+
+      const questionIndex = answerIndex - 1;
+
+      const source = sources?.[questionIndex];
+
+      setResponses({
+        question: messages?.[questionIndex],
+        answer: msg,
+        sources: source,
+      });
+
+      // alert(
+      //   JSON.stringify(
+      //     {
+      //       question: messages?.[questionIndex],
+      //       answer: msg,
+      //       sources: source,
+      //     },
+      //     null,
+      //     4
+      //   )
+      // );
+
+      // alert(value);
+    },
+    // delay in ms
+    1000
+  );
 
   const searchParams = useSearchParams();
   const query = searchParams.get("query") as string;
@@ -116,23 +197,38 @@ export function SearchForm() {
 
   const lastAnswer = answers?.[answers?.length - 1];
 
+  const lastQuestionIndex = messages?.findIndex(
+    (msg: any) => msg?.id === lastQuestion?.id
+  );
+
+  const questionIndex = messages?.length <= 2 ? 0 : lastQuestionIndex;
+
+  const currentSource = sources?.[questionIndex]?.sources;
+
   return (
     <div className="my-8">
       <form
         onSubmit={(event) => {
           event.preventDefault();
 
+          // setMessages([]);
+
           listSearchResultsMutation
             ?.mutateAsync({ query: content })
-            .then((sources) => {
-              console.log("SOURCES", sources);
-              setSources(sources);
+            .then((sourcesResp) => {
+              const questionIndex = messages?.length;
+              setSources({
+                ...sources,
+                [questionIndex]: {
+                  questionIndex: questionIndex,
+                  sources: sourcesResp,
+                },
+              });
 
-              console.log("MESSAGES", messages);
               handleSubmit(event, {
                 data: {
                   content,
-                  sources,
+                  sources: sourcesResp,
                 },
               });
             });
@@ -180,10 +276,10 @@ export function SearchForm() {
       </div>
 
       <div className="max-w-4xl mb-8">
-        {sources?.length > 0 && (
-          <h1>
-            Found: {sources?.length}{" "}
-            {sources?.length === 1 ? "source" : "sources"}{" "}
+        {currentSource?.length > 0 && (
+          <h1 onClick={() => [setRevealSource((val) => !val)]}>
+            Found: {currentSource?.length}{" "}
+            {currentSource?.length === 1 ? "source" : "sources"}{" "}
           </h1>
         )}
       </div>
@@ -192,7 +288,19 @@ export function SearchForm() {
         <p dangerouslySetInnerHTML={{ __html: lastAnswer?.content }} />
       </div>
 
+      {revealSource && (
+        <div className="max-w-4xl">
+          <code>
+            <pre>{JSON.stringify(currentSource, null, 4)}</pre>
+          </code>
+        </div>
+      )}
       {/* <div className="max-w-4xl">
+        <code>
+          <pre>{JSON.stringify(responses, null, 4)}</pre>
+        </code>
+      </div>
+      <div className="max-w-4xl">
         <code>
           <pre>{JSON.stringify(messages, null, 4)}</pre>
         </code>

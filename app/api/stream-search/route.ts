@@ -79,14 +79,14 @@ If the search results are empty or unhelpful, answer the query as well as you ca
 
 If you dont know the answer OR if it is not mentioned in the sources, just say that you dont know. Dont make up nonsense.
 
-For example if the user asks random questions like: How to win in life or something similar but the provided sources is an empty [] then say: I dont know the answer.
+For example if the user asks random questions like: How to win in life or how to learn hindi something similar but the provided sources is an empty [] then say: I dont know the answer.
 
-Please keep it grounded
+Please keep it grounded and only based on the 
 
 
-##Source:
+##Source Provided:
 
-${JSON.stringify(sources)}
+${JSON.stringify(sources?.length === 0 ? "No source provided. Please answer I dont know" : sources)}
 
 
 
@@ -101,10 +101,12 @@ ${JSON.stringify(sources)}
 
   console.log("MESSAGES", messages);
 
+  const lastMessage = messages?.[messages?.length - 1];
+
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     stream: true,
-    messages: [firstMessage, ...messages],
+    messages: [firstMessage, lastMessage],
   });
 
   // Convert the response into a friendly text-stream

@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   const reranked = await cohereApi.rerank({
     query,
     documents: docs,
-    topN: 3,
+    topN: 10,
   });
 
   const rerankedAndSorted = pineconeResponse.queryResponse.matches
