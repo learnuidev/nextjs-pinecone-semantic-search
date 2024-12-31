@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^4.29.5",
     "@clerk/themes": "^1.7.9",
     "@langchain/openai": "^0.0.12",
+    "@nanostores/react": "github:ai/react",
     "@pinecone-database/pinecone": "^2.0.1",
     "@prisma/client": "^5.8.1",
     "@radix-ui/react-label": "^2.0.2",

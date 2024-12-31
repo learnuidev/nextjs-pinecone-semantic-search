@@ -1,17 +1,20 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useEffect, useState } from "react";
 import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
-import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
+import { AddResourceParams } from "@/domain/resource/resource.types";
+import { useEffect, useState } from "react";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  useListSearchResultsMutation,
+  useListSearchResultsQuery,
+} from "@/domain/search/search.queries";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useListSearchResultsQuery } from "@/domain/search/search.queries";
-import { useListVideosQuery } from "./api/list-videos/query";
+
+import { useChat } from "ai/react";
 
 export function ResourceForm() {
   const [type, setType] = useState("video");
@@ -78,6 +81,12 @@ export function SearchForm() {
   const [content, setContent] = useState("");
   const router = useRouter();
 
+  const [sources, setSources] = useState<any>(null);
+
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "api/stream-search",
+  });
+
   const searchParams = useSearchParams();
   const query = searchParams.get("query") as string;
 
@@ -89,6 +98,8 @@ export function SearchForm() {
     query,
   });
 
+  const listSearchResultsMutation = useListSearchResultsMutation();
+
   useEffect(() => {
     setContent(query);
   }, [query]);
@@ -96,36 +107,98 @@ export function SearchForm() {
   // const { data: videos, isLoading: isVideosLoading } = useListVideosQuery({
   //   query,
   // });
+
+  const userQuestions = messages?.filter((message) => message?.role === "user");
+
+  const lastQuestion = userQuestions?.[userQuestions?.length - 1];
+
+  const answers = messages?.filter((message) => message?.role === "assistant");
+
+  const lastAnswer = answers?.[answers?.length - 1];
+
   return (
     <div className="my-8">
-      <Input
-        onChange={(event) => {
-          setContent(event.target.value);
-        }}
-        onKeyDown={(event) => {
-          console.log("EVENt CODE", event.code);
-          if (event.code === "Enter") {
-            router.push(`?query=${content}`);
-          }
-        }}
-        value={content}
-        className="my-4 md:w-[600px] focus-visible:ring-0"
-      />
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
 
-      <div></div>
+          listSearchResultsMutation
+            ?.mutateAsync({ query: content })
+            .then((sources) => {
+              console.log("SOURCES", sources);
+              setSources(sources);
 
-      <Button
-        onClick={() => {
-          router.push(`?query=${content}`);
+              console.log("MESSAGES", messages);
+              handleSubmit(event, {
+                data: {
+                  content,
+                  sources,
+                },
+              });
+            });
+          // handleSubmit(event, {
+          //   data: {
+          //     content,
+          //   },
+          // });
         }}
-        className="mr-2"
       >
-        {" "}
-        Search
-      </Button>
-      <Button onClick={resetFormHandler}>Clear</Button>
+        <Input
+          onChange={(event) => {
+            setContent(event.target.value);
+            handleInputChange(event);
+          }}
+          onKeyDown={(event) => {
+            if (event.code === "Enter") {
+              router.push(`?query=${content}`);
+            }
+          }}
+          value={input}
+          // value={content}
+          className="my-4 md:w-[600px] focus-visible:ring-0"
+        />
 
-      {isLoading ? (
+        <div></div>
+
+        <Button
+          type="submit"
+          // onClick={() => {
+          //   router.push(`?query=${content}`);
+          // }}
+          className="mr-2"
+        >
+          {" "}
+          Search
+        </Button>
+      </form>
+      {/* <Button onClick={resetFormHandler}>Clear</Button> */}
+
+      <div>
+        <h1 className="text-2xl mt-8 mb-4 font-extralight">
+          {content || lastQuestion?.content}
+        </h1>
+      </div>
+
+      <div className="max-w-4xl mb-8">
+        {sources?.length > 0 && (
+          <h1>
+            Found: {sources?.length}{" "}
+            {sources?.length === 1 ? "source" : "sources"}{" "}
+          </h1>
+        )}
+      </div>
+
+      <div>
+        <p dangerouslySetInnerHTML={{ __html: lastAnswer?.content }} />
+      </div>
+
+      {/* <div className="max-w-4xl">
+        <code>
+          <pre>{JSON.stringify(messages, null, 4)}</pre>
+        </code>
+      </div> */}
+
+      {/* {isLoading ? (
         <p className="my-16 text-xl font-light text-center">Loading</p>
       ) : (
         <div className="max-w-4xl">
@@ -133,7 +206,7 @@ export function SearchForm() {
             <pre>{JSON.stringify(data, null, 2)}</pre>
           </code>
         </div>
-      )}
+      )} */}
       {/* {isVideosLoading ? (
         <p className="my-16 text-xl font-light text-center">Loading</p>
       ) : (

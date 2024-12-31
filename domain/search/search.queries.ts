@@ -1,7 +1,7 @@
 "use client";
 import { queryIds } from "./queryIds";
 
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { listRearchResults } from "./search.api";
 
 export function useListSearchResultsQuery(
@@ -15,6 +15,19 @@ export function useListSearchResultsQuery(
       return response;
     },
     enabled: Boolean(params.query),
+    retry: false,
+  });
+}
+export function useListSearchResultsMutation(
+  params = {} as { query: string },
+  options = {} as any
+) {
+  return useMutation({
+    mutationFn: async (params: { query: string }) => {
+      const response = await listRearchResults(params);
+      return response;
+    },
+
     retry: false,
   });
 }

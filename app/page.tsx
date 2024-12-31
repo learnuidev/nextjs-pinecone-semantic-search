@@ -1,16 +1,8 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Suspense, useState } from "react";
-import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
-import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
+import { Suspense } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useListSearchResultsQuery } from "@/domain/search/search.queries";
 import { ResourceForm, SearchForm } from "./resource-form";
 
 export default function Home() {
