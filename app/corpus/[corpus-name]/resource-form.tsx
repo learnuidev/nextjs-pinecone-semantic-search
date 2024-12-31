@@ -17,8 +17,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { useChat } from "ai/react";
 import Link from "next/link";
+import { useCorpusParams } from "../hooks/use-corpus-params";
 
 export function ResourceForm() {
+  const { corpusName } = useCorpusParams();
   const [type, setType] = useState("video");
   const [content, setContent] = useState("");
 
@@ -64,6 +66,7 @@ export function ResourceForm() {
             type,
             content,
             userId: "learnuidev@gmail.com",
+            corpusName,
           } as AddResourceParams;
           addResourceMutation.mutateAsync(inputData).then((res) => {
             // alert(JSON.stringify(res));
@@ -84,49 +87,21 @@ export function SearchForm() {
   const [content, setContent] = useState("");
   const router = useRouter();
 
+  const { corpusName } = useCorpusParams();
+
   const [sources, setSources] = useState<any>({});
   const [responses, setResponses] = useState({});
 
   const { messages, input, handleInputChange, setMessages, handleSubmit } =
     useChat({
-      api: "api/stream-search",
+      api: "/api/stream-search",
 
       onFinish: (msg: any) => {
         console.log("DONE", JSON.stringify(msg));
 
-        // const answerIndex = messages?.findIndex(
-        //   (message) => message?.id === msg?.id
-        // );
-
-        // alert(answerIndex);
-
-        // const questionIndex = answerIndex - 1;
-
-        // const source = sources?.[questionIndex];
-
-        // alert(
-        //   JSON.stringify(
-        //     {
-        //       question: messages?.[questionIndex],
-        //       answer: msg,
-        //       sources: source,
-        //     },
-        //     null,
-        //     4
-        //   )
-        // );
-
         debouncedAlert(msg);
       },
     });
-
-  const delaySetMessages = useDebouncedCallback((msgs) => {
-    setMessages(msgs);
-  }, 1000);
-
-  // useEffect(() => {
-  //   delaySetMessages([{ role: "user", content: "yoo" }]);
-  // }, []);
 
   const debouncedAlert = useDebouncedCallback(
     // function
@@ -177,6 +152,7 @@ export function SearchForm() {
 
   const { data, isLoading } = useListSearchResultsQuery({
     query,
+    corpusName,
   });
 
   const listSearchResultsMutation = useListSearchResultsMutation();
@@ -214,7 +190,7 @@ export function SearchForm() {
           // setMessages([]);
 
           listSearchResultsMutation
-            ?.mutateAsync({ query: content })
+            ?.mutateAsync({ query: content, corpusName })
             .then((sourcesResp) => {
               const questionIndex = messages?.length;
               setSources({
@@ -232,11 +208,6 @@ export function SearchForm() {
                 },
               });
             });
-          // handleSubmit(event, {
-          //   data: {
-          //     content,
-          //   },
-          // });
         }}
       >
         <Input
@@ -250,24 +221,16 @@ export function SearchForm() {
             }
           }}
           value={input}
-          // value={content}
           className="my-4 md:w-[600px] focus-visible:ring-0"
         />
 
         <div></div>
 
-        <Button
-          type="submit"
-          // onClick={() => {
-          //   router.push(`?query=${content}`);
-          // }}
-          className="mr-2"
-        >
+        <Button type="submit" className="mr-2">
           {" "}
           Search
         </Button>
       </form>
-      {/* <Button onClick={resetFormHandler}>Clear</Button> */}
 
       <div>
         <h1 className="text-2xl mt-8 mb-4 font-extralight">
@@ -297,33 +260,6 @@ export function SearchForm() {
           </code>
         </div>
       )}
-      {/* <div className="max-w-4xl">
-        <code>
-          <pre>{JSON.stringify(responses, null, 4)}</pre>
-        </code>
-      </div>
-      <div className="max-w-4xl">
-        <code>
-          <pre>{JSON.stringify(messages, null, 4)}</pre>
-        </code>
-      </div> */}
-
-      {/* {isLoading ? (
-        <p className="my-16 text-xl font-light text-center">Loading</p>
-      ) : (
-        <div className="max-w-4xl">
-          <code className="block my-8">
-            <pre>{JSON.stringify(data, null, 2)}</pre>
-          </code>
-        </div>
-      )} */}
-      {/* {isVideosLoading ? (
-        <p className="my-16 text-xl font-light text-center">Loading</p>
-      ) : (
-        <code className="block my-8">
-          <pre>{JSON.stringify(videos, null, 2)}</pre>
-        </code>
-      )} */}
     </div>
   );
 }

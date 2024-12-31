@@ -3,9 +3,10 @@ import { queryIds } from "./queryIds";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { listRearchResults } from "./search.api";
+import { ListSearchParams } from "./search.types";
 
 export function useListSearchResultsQuery(
-  params = {} as { query: string },
+  params = {} as ListSearchParams,
   options = {} as any
 ) {
   return useQuery({
@@ -23,7 +24,7 @@ export function useListSearchResultsMutation(
   options = {} as any
 ) {
   return useMutation({
-    mutationFn: async (params: { query: string }) => {
+    mutationFn: async (params: ListSearchParams) => {
       const response = await listRearchResults(params);
       return response;
     },

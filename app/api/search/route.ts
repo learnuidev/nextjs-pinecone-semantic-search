@@ -3,10 +3,9 @@ import { Pinecone } from "@pinecone-database/pinecone";
 import { queryPineconeVectorStoreAndQueryLLM } from "./utils";
 
 import * as cohereApi from "@/lib/cohere.api";
-import { searchIndexName } from "@/lib/pinecone";
 
 export async function POST(req: Request) {
-  const { query } = await req.json();
+  const { query, corpusName } = await req.json();
 
   const pinecone = new Pinecone({
     apiKey: appConfig.pineconeAPIKey,
@@ -14,7 +13,7 @@ export async function POST(req: Request) {
 
   const pineconeResponse = await queryPineconeVectorStoreAndQueryLLM(
     pinecone,
-    searchIndexName,
+    corpusName,
     query
   );
 

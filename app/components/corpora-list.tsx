@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Copy, MoreVertical } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useCorpusParams } from "../corpus/hooks/use-corpus-params";
 import { useListCorporaQuery } from "../hooks/use-list-corpora-query";
 
 export function CorporaList() {
   const { data: corpora } = useListCorporaQuery();
-  const { corpusName } = useCorpusParams();
 
   const router = useRouter();
   return (

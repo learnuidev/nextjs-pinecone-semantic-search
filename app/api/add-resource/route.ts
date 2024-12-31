@@ -1,13 +1,10 @@
 import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
 import { getEmbedding } from "@/lib/openai";
-import { searchIndex } from "@/lib/pinecone";
-
-type ResponseData = {
-  message: string;
-};
+import { pineconeIndex } from "@/lib/pinecone/pinecone-index";
 
 export async function POST(req: Request) {
-  const { type, content, userId } = (await req.json()) as AddResourceParams;
+  const { type, content, userId, corpusName } =
+    (await req.json()) as AddResourceParams;
 
   // Save it to pine cone
   const embedding = await getEmbedding(`
@@ -22,7 +19,9 @@ export async function POST(req: Request) {
     content,
   };
 
-  await searchIndex.upsert([
+  const corpusIndex = pineconeIndex(corpusName);
+
+  await corpusIndex.upsert([
     {
       id: params.id,
       values: embedding,

@@ -6,4 +6,5 @@ export interface Resource {
 
 export type AddResourceParams = Resource & {
   userId: string;
+  corpusName: string;
 };
