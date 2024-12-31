@@ -1,4 +1,4 @@
-import { describeIndex } from "@/lib/pinecone/get-index";
+import { describeIndex } from "@/lib/pinecone/describe-index";
 
 export async function POST(req: Request) {
   const { name } = await req.json();
