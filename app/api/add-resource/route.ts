@@ -1,5 +1,6 @@
 import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
-import { getEmbedding } from "@/lib/openai";
+import { createEmbedding } from "@/lib/openai/create-embedding";
+
 import { pineconeIndex } from "@/lib/pinecone/pinecone-index";
 
 export async function POST(req: Request) {
@@ -7,7 +8,7 @@ export async function POST(req: Request) {
     (await req.json()) as AddResourceParams;
 
   // Save it to pine cone
-  const embedding = await getEmbedding(`
+  const embedding = await createEmbedding(`
   Type: ${type}\n\n
   Content: ${content}
   `);

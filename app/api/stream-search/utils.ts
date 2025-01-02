@@ -3,8 +3,8 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { OpenAI } from "langchain/llms/openai";
 import { loadQAStuffChain } from "langchain/chains";
 import { Document } from "langchain/document";
-import { getEmbedding } from "@/lib/openai";
 import { appConfig } from "@/config/app-config";
+import { createEmbedding } from "@/lib/openai/create-embedding";
 
 export const queryPineconeVectorStoreAndQueryLLM = async (
   client: any,
@@ -17,7 +17,7 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
   const index = client.Index(indexName);
   // // 3. Create query embedding
 
-  const queryEmbedding = await getEmbedding(question);
+  const queryEmbedding = await createEmbedding(question);
   // 4. Query Pinecone index and return top 10 matches
   let queryResponse = await index.query({
     topK: 3,

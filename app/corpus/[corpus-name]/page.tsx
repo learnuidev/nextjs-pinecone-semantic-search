@@ -38,7 +38,7 @@ export default function CorpusItem() {
     );
   }
   return (
-    <main className="flex min-h-screen flex-col p-24">
+    <main className="flex min-h-screen flex-col p-4 sm:p-24">
       <div className="flex justify-between items-center w-full">
         <div>
           <h1 className="text-2xl font-bold">Coze</h1>

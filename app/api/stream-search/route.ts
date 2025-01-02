@@ -1,10 +1,12 @@
 // import { streamText } from 'ai';
+import { appConfig } from "@/config/app-config";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: appConfig.deepseekAPIKey,
+  baseURL: "https://api.deepseek.com",
 });
 
 // IMPORTANT! Set the runtime to edge
@@ -48,7 +50,7 @@ ${JSON.stringify(sources?.length === 0 ? "No source provided. Please answer I do
   const lastMessage = messages?.[messages?.length - 1];
 
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: "deepseek-chat",
     stream: true,
     messages: [firstMessage, lastMessage],
   });
