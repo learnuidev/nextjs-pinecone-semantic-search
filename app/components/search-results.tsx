@@ -16,7 +16,7 @@ export function SearchResults({ results }: any) {
               key={JSON.stringify(result)}
               className="bg-gray-50 p-8 rounded-2xl"
             >
-              <div className="w-full sm:max-w-4xl">
+              <div className="w-full">
                 <h1 className="text-2xl mb-4 font-extralight">
                   {searchResult?.question?.content}
                 </h1>
