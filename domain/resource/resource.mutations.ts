@@ -11,9 +11,5 @@ export function useAddResourceMutation(options = {} as any) {
       const response = await addResource(params);
       return response;
     },
-
-    onSuccess: (data) => {
-      console.log("SUCCESS", data);
-    },
   });
 }

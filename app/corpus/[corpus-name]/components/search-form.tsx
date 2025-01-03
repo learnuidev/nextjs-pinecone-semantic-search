@@ -69,7 +69,7 @@ export function SearchForm() {
         createdAt: Date.now(),
       } as AddResourceParams;
 
-      if (!answerResponse?.content?.toLowerCase()?.includes("I don't know")) {
+      if (!answerResponse?.content?.toLowerCase()?.includes("i don't know")) {
         console.log("captured", content);
         addResourceMutation.mutateAsync(inputData).then((resp) => {
           setResponses(content);
