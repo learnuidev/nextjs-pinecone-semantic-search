@@ -8,7 +8,6 @@ export function useListVideosQuery(
   params = {} as ListVideosParams,
   options = {} as any
 ) {
-  console.log("PARAMS", params);
   return useQuery({
     queryKey: [queryId, params.query],
     queryFn: async () => {

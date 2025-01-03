@@ -26,11 +26,7 @@ export const listVideos = ({ query }: ListVideosParams) => {
     params.q = query;
   }
 
-  console.log("PARAMS", params);
-
   return youtube.search.list(params).then((items) => {
-    console.log("ITEMS: ", items);
-
     return items.data.items;
   });
 };

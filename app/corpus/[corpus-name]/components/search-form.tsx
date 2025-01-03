@@ -35,8 +35,6 @@ export function SearchForm() {
       api: "/api/stream-search",
 
       onFinish: (msg: any) => {
-        console.log("DONE", JSON.stringify(msg));
-
         debouncedAlert(msg);
       },
     });
@@ -44,14 +42,9 @@ export function SearchForm() {
   const debouncedAlert = useDebouncedCallback(
     // function
     (msg) => {
-      console.log("MESSAGES", messages);
-      console.log("MSG", msg);
-
       const answerIndex = messages?.findIndex(
         (message) => message?.id === msg?.id
       );
-
-      console.log("AI", answerIndex);
 
       const questionIndex = answerIndex - 1;
 
@@ -62,9 +55,11 @@ export function SearchForm() {
       const content = {
         question: messages?.[questionIndex],
         answer: msg,
-        sources: _sources,
+        sourceIds: _sources?.map((source: any) => source?.id),
         corpusName: corpusName,
       };
+
+      console.log("CONTENT", content);
 
       const contentStr = JSON.stringify(content);
 
