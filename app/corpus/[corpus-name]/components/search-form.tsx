@@ -6,17 +6,14 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { useDebouncedCallback } from "use-debounce";
 
-import {
-  useListSearchResultsMutation,
-  useListSearchResultsQuery,
-} from "@/domain/search/search.queries";
-import { useRouter, useSearchParams } from "next/navigation";
 import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
+import { useListSearchResultsMutation } from "@/domain/search/search.queries";
+import { useRouter, useSearchParams } from "next/navigation";
 
-import { useChat } from "ai/react";
-import { useCorpusParams } from "../../hooks/use-corpus-params";
 import { AddResourceParams } from "@/domain/resource/resource.types";
 import { searchResultsIndex } from "@/lib/search-results-index";
+import { useChat } from "ai/react";
+import { useCorpusParams } from "../../hooks/use-corpus-params";
 
 export function SearchForm() {
   const [revealSource, setRevealSource] = useState(false);
@@ -50,8 +47,6 @@ export function SearchForm() {
 
       const _sources = sources?.[questionIndex]?.sources;
 
-      const response = {};
-
       const content = {
         question: messages?.[questionIndex],
         answer: answerResponse,
@@ -75,20 +70,6 @@ export function SearchForm() {
           setResponses(content);
         });
       }
-
-      // alert(
-      //   JSON.stringify(
-      //     {
-      //       question: messages?.[questionIndex],
-      //       answer: msg,
-      //       sources: source,
-      //     },
-      //     null,
-      //     4
-      //   )
-      // );
-
-      // alert(value);
     },
     // delay in ms
     1000
@@ -97,24 +78,11 @@ export function SearchForm() {
   const searchParams = useSearchParams();
   const query = searchParams.get("query") as string;
 
-  const resetFormHandler = () => {
-    setContent("");
-  };
-
-  const { data, isLoading } = useListSearchResultsQuery({
-    query,
-    corpusName,
-  });
-
   const listSearchResultsMutation = useListSearchResultsMutation();
 
   useEffect(() => {
     setContent(query);
   }, [query]);
-
-  // const { data: videos, isLoading: isVideosLoading } = useListVideosQuery({
-  //   query,
-  // });
 
   const userQuestions = messages?.filter((message) => message?.role === "user");
 
@@ -137,8 +105,6 @@ export function SearchForm() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-
-          // setMessages([]);
 
           listSearchResultsMutation
             ?.mutateAsync({ query: content, corpusName })
@@ -198,10 +164,7 @@ export function SearchForm() {
         )}
       </div>
 
-      <div>
-        <Markdown>{lastAnswer?.content}</Markdown>
-        {/* <p dangerouslySetInnerHTML={{ __html: lastAnswer?.content }} /> */}
-      </div>
+      <Markdown>{lastAnswer?.content}</Markdown>
 
       {revealSource && (
         <div className="max-w-3xl">
