@@ -29,7 +29,17 @@ export default function Home() {
           setResults={setResults}
         />
         {searchTerm && results ? (
-          <SearchResults results={results} />
+          results?.length === 0 ? (
+            <div className="text-center mt-32">
+              <h1 className="text-2xl font-light">Nothing here</h1>
+
+              <p className="font-extralight text-gray-600">
+                Please try a different term and try again
+              </p>
+            </div>
+          ) : (
+            <SearchResults results={results} />
+          )
         ) : (
           <CorporaList />
         )}
