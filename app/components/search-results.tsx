@@ -6,7 +6,9 @@ import Markdown from "react-markdown";
 export function SearchResults({ results }: any) {
   return (
     <div>
-      <h1 className="text-center">Results</h1>
+      <h1 className="text-center my-8 text-2xl font-extralight">
+        Search Results
+      </h1>
 
       <section className="gap-4 flex flex-col">
         {results?.map((result: any) => {
@@ -17,7 +19,7 @@ export function SearchResults({ results }: any) {
               className="bg-gray-50 p-8 rounded-2xl"
             >
               <div className="w-full">
-                <h1 className="text-2xl mb-4 font-extralight">
+                <h1 className="text-3xl mb-8 font-extralight">
                   {searchResult?.question?.content}
                 </h1>
               </div>
