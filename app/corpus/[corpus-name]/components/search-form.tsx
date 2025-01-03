@@ -41,9 +41,9 @@ export function SearchForm() {
 
   const debouncedAlert = useDebouncedCallback(
     // function
-    (msg) => {
+    (answerResponse) => {
       const answerIndex = messages?.findIndex(
-        (message) => message?.id === msg?.id
+        (message) => message?.id === answerResponse?.id
       );
 
       const questionIndex = answerIndex - 1;
@@ -54,12 +54,10 @@ export function SearchForm() {
 
       const content = {
         question: messages?.[questionIndex],
-        answer: msg,
+        answer: answerResponse,
         sourceIds: _sources?.map((source: any) => source?.id),
         corpusName: corpusName,
       };
-
-      console.log("CONTENT", content);
 
       const contentStr = JSON.stringify(content);
 
@@ -71,7 +69,8 @@ export function SearchForm() {
         createdAt: Date.now(),
       } as AddResourceParams;
 
-      if (_sources?.length > 0) {
+      if (!answerResponse?.content?.toLowerCase()?.includes("I don't know")) {
+        console.log("captured", content);
         addResourceMutation.mutateAsync(inputData).then((resp) => {
           setResponses(content);
         });
