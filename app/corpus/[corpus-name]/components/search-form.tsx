@@ -11,14 +11,19 @@ import {
   useListSearchResultsQuery,
 } from "@/domain/search/search.queries";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useAddResourceMutation } from "@/domain/resource/resource.mutations";
 
 import { useChat } from "ai/react";
 import { useCorpusParams } from "../../hooks/use-corpus-params";
+import { AddResourceParams } from "@/domain/resource/resource.types";
+import { searchResultsIndex } from "@/lib/search-results-index";
 
 export function SearchForm() {
   const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
   const router = useRouter();
+
+  const addResourceMutation = useAddResourceMutation();
 
   const { corpusName } = useCorpusParams();
 
@@ -50,13 +55,32 @@ export function SearchForm() {
 
       const questionIndex = answerIndex - 1;
 
-      const source = sources?.[questionIndex];
+      const _sources = sources?.[questionIndex]?.sources;
 
-      setResponses({
+      const response = {};
+
+      const content = {
         question: messages?.[questionIndex],
         answer: msg,
-        sources: source,
-      });
+        sources: _sources,
+        corpusName: corpusName,
+      };
+
+      const contentStr = JSON.stringify(content);
+
+      const inputData = {
+        type: "search-result",
+        content: contentStr,
+        userId: "learnuidev@gmail.com",
+        corpusName: searchResultsIndex,
+        createdAt: Date.now(),
+      } as AddResourceParams;
+
+      if (_sources?.length > 0) {
+        addResourceMutation.mutateAsync(inputData).then((resp) => {
+          setResponses(content);
+        });
+      }
 
       // alert(
       //   JSON.stringify(

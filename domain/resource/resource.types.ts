@@ -1,4 +1,4 @@
-export type ResourceTypes = "video" | "audio" | "website";
+export type ResourceTypes = "video" | "audio" | "website" | "search-result";
 export interface Resource {
   type: ResourceTypes;
   content: string;

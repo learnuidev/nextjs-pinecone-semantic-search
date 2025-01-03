@@ -1,12 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-
+import { useState } from "react";
 import CorporaFilters from "./components/corpora-filters";
 import { CorporaList } from "./components/corpora-list";
 import { CreateCorpusDialog } from "./components/create-corpus-dialog";
+import { SearchResults } from "./components/search-results";
 
 export default function Home() {
+  const [results, setResults] = useState<any>(null);
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <main className="flex min-h-screen flex-col p-4 sm:p-8 md:p-24">
       <div className="text-center">
@@ -21,8 +23,16 @@ export default function Home() {
           {/* <Button>Create corpus</Button> */}
           <CreateCorpusDialog />
         </div>
-        <CorporaFilters />
-        <CorporaList />
+        <CorporaFilters
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          setResults={setResults}
+        />
+        {searchTerm && results ? (
+          <SearchResults results={results} />
+        ) : (
+          <CorporaList />
+        )}
       </main>
     </main>
   );

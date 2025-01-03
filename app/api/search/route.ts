@@ -5,7 +5,7 @@ import { queryPineconeVectorStoreAndQueryLLM } from "./utils";
 import * as cohereApi from "@/lib/cohere.api";
 
 export async function POST(req: Request) {
-  const { query, corpusName } = await req.json();
+  const { query, corpusName, rerank = true } = await req.json();
 
   const pinecone = new Pinecone({
     apiKey: appConfig.pineconeAPIKey,
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     topN: 10,
   });
 
-  const rerankedAndSorted = pineconeResponse.queryResponse.matches
+  let rerankedAndSorted = pineconeResponse.queryResponse.matches
     ?.map((match: any, idx: any) => {
       const rankIndex = reranked?.results?.find((r: any) => r?.index === idx);
       return {
@@ -41,8 +41,15 @@ export async function POST(req: Request) {
         cohereScore: rankIndex?.relevance_score,
       };
     })
-    ?.sort((a: any, b: any) => b?.cohereScore - a?.cohereScore)
-    ?.filter((result: any) => result?.cohereScore > 0.8);
+    ?.sort((a: any, b: any) => b?.cohereScore - a?.cohereScore);
+
+  if (rerank) {
+    rerankedAndSorted = rerankedAndSorted?.filter(
+      (result: any) => result?.cohereScore > 0.8
+    );
+
+    return Response.json(rerankedAndSorted);
+  }
 
   return Response.json(rerankedAndSorted);
 }
