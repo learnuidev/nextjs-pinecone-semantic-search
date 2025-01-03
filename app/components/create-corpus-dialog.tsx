@@ -37,10 +37,6 @@ export function useAddCorpusMutation() {
       const response = await createCorpus(params);
       return response;
     },
-
-    onSuccess: (data) => {
-      console.log("SUCCESS", data);
-    },
   });
 }
 
