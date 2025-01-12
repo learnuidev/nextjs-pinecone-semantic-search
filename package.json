@@ -23,6 +23,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@tanstack/react-query-devtools": "^5.17.21",
     "ai": "^2.2.31",
+    "aws-sdk": "^2.1692.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.1",

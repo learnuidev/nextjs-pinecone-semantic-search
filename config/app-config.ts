@@ -6,6 +6,8 @@ const configSchema = z.object({
   youtubeAPIKey: z.string(),
   cohereAPIKey: z.string(),
   deepseekAPIKey: z.string(),
+  accessKeyId: z.string(),
+  awsSecretKey: z.string(),
 });
 
 export interface IAppConfig {
@@ -14,6 +16,8 @@ export interface IAppConfig {
   youtubeAPIKey: string;
   cohereAPIKey: string;
   deepseekAPIKey: string;
+  accessKeyId: string;
+  awsSecretKey: string;
 }
 
 export const appConfig: IAppConfig = {
@@ -22,6 +26,9 @@ export const appConfig: IAppConfig = {
   pineconeAPIKey: process.env.PINECONE_API_KEY || "",
   cohereAPIKey: process.env.COHERE_API_KEY || "",
   deepseekAPIKey: process.env.DEEPSEEK_API_KEY || "",
+
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
+  awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY || "",
 };
 
 configSchema.parse(appConfig);
