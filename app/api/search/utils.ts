@@ -1,8 +1,3 @@
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-
-import { OpenAI } from "langchain/llms/openai";
-import { loadQAStuffChain } from "langchain/chains";
-import { Document } from "langchain/document";
 import { createEmbedding } from "@/lib/openai/create-embedding";
 
 export const queryPineconeVectorStoreAndQueryLLM = async (
@@ -29,30 +24,4 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
     queryResponse,
     data: "test",
   };
-
-  // return { indexName, question };
-  // 5. Log the number of matches
-  console.log(`Found ${queryResponse.matches.length} matches...`);
-  // 6. Log the question being asked
-  console.log(`Asking question: ${question}...`);
-  if (queryResponse.matches.length) {
-    // 7. Create an OpenAI instance and load the QAStuffChain
-    const llm = new OpenAI({});
-    const chain = loadQAStuffChain(llm);
-    // 8. Extract and concatenate page content from matched documents
-    const concatenatedPageContent = queryResponse.matches
-      .map((match: any) => match.metadata.pageContent)
-      .join(" ");
-    // 9. Execute the chain with input documents and question
-    const result = await chain.call({
-      input_documents: [new Document({ pageContent: concatenatedPageContent })],
-      question: question,
-    });
-    // 10. Log the answer
-    console.log(`Answer: ${result.text}`);
-    return result.text;
-  } else {
-    // 11. Log that there are no matches, so GPT-3 will not be queried
-    console.log("Since there are no matches, GPT-3 will not be queried.");
-  }
 };
