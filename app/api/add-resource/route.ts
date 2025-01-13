@@ -9,10 +9,7 @@ export async function POST(req: Request) {
   const { type, content, model, corpusName, nameSpace } =
     (await req.json()) as AddResourceParams;
 
-  const embeddingText = `
-  Type: ${type}\n\n
-  Content: ${content}
-  `;
+  const embeddingText = `${content}`;
 
   const newContent = {
     text: embeddingText,

@@ -12,7 +12,7 @@ export function SearchResults({ results }: any) {
 
       <section className="gap-4 flex flex-col">
         {results?.map((result: any) => {
-          const searchResult = JSON.parse(result?.metadata?.content);
+          const searchResult = JSON.parse(result?.document.text);
           return (
             <div
               key={JSON.stringify(result)}
@@ -30,7 +30,7 @@ export function SearchResults({ results }: any) {
 
               <div className="mt-8 flex justify-between items-center">
                 <h3 className="text-2xl font-extralight">
-                  Score: {result?.cohereScore}
+                  Score: {result?.score}
                 </h3>
 
                 <Link
