@@ -39,21 +39,19 @@ export default function CorpusItem() {
   }
   return (
     <main className="flex min-h-screen flex-col p-4 sm:px-24">
-      <div className="flex justify-between items-center w-full">
-        <div>
+      <div className="flex justify-between items-center w-full mb-8">
+        <h1 className="my-4 text-2xl">{corpusName}</h1>
+        {/* <div>
           <h1 className="text-2xl font-bold">Zafron</h1>
 
           <p>Next Gen Search</p>
-        </div>
+        </div> */}
 
         <Link href="/">
           <XIcon />
         </Link>
       </div>
 
-      <section>
-        <h1 className="my-4 text-2xl">{corpusName}</h1>
-      </section>
       <Suspense>
         <Tabs defaultValue="search" className="">
           <TabsList>

@@ -31,7 +31,7 @@ export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {
     setContent("");
   };
   return (
-    <div className="my-8">
+    <div className="my-8 max-w-6xl mx-auto">
       <RadioGroup
         defaultValue={type}
         onValueChange={(value: string) => {
@@ -53,34 +53,43 @@ export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {
         </div>
       </RadioGroup>
 
-      <textarea
-        onChange={(event) => {
-          setContent(event.target.value);
-        }}
-        value={content}
-        className="my-4 md:w-[600px] focus-visible:ring-0"
-      />
+      <div className="my-8 max-w-6xl mx-auto flex justify-between items-center">
+        <textarea
+          onChange={(event) => {
+            setContent(event.target.value);
+          }}
+          value={content}
+          className="p-4 max-w-8xl w-full h-[260px] sm:h-[600px] rounded-xl focus-visible:outline-none focus-visible:ring-ring dark:bg-black bg-gray-100"
+        />
+      </div>
 
-      <Button
-        onClick={() => {
-          const inputData = {
-            type,
-            content,
-            corpusName,
-            model: getModelName(corpus),
-            nameSpace: emailAddress,
-          } as AddResourceParams;
-          addResourceMutation.mutateAsync(inputData).then((res) => {
-            // alert(JSON.stringify(res));
-            resetFormHandler();
-          });
-        }}
-        className="mr-2"
-      >
-        {" "}
-        Add Resource
-      </Button>
-      <Button onClick={resetFormHandler}>Clear</Button>
+      <div className="flex justify-end space-x-4 mt-4">
+        <Button
+          className="dark:bg-gray-800 dark:text-white"
+          onClick={() => {
+            const inputData = {
+              type,
+              content,
+              corpusName,
+              model: getModelName(corpus),
+              nameSpace: emailAddress,
+            } as AddResourceParams;
+            addResourceMutation.mutateAsync(inputData).then((res) => {
+              // alert(JSON.stringify(res));
+              resetFormHandler();
+            });
+          }}
+        >
+          {" "}
+          Add Resource
+        </Button>
+        <Button
+          className="dark:bg-gray-800 dark:text-white"
+          onClick={resetFormHandler}
+        >
+          Clear
+        </Button>
+      </div>
     </div>
   );
 }

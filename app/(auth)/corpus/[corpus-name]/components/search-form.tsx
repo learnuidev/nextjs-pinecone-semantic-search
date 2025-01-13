@@ -140,6 +140,7 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
               });
             });
         }}
+        className="flex space-x-4"
       >
         <Input
           onChange={(event) => {
@@ -151,13 +152,12 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
               router.push(`?query=${content}`);
             }
           }}
+          placeholder="Ask me anything..."
           value={input}
-          className="my-4 md:w-[600px] focus-visible:ring-0"
+          className="md:w-[600px] focus-visible:ring-0 rounded-full"
         />
 
-        <div></div>
-
-        <Button type="submit" className="mr-2">
+        <Button type="submit" variant={"outline"} className="rounded-full">
           {" "}
           Search
         </Button>
