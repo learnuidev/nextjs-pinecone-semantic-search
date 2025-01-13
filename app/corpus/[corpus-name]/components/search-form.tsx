@@ -53,7 +53,8 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
       const content = {
         question: messages?.[questionIndex],
         answer: answerResponse,
-        sourceIds: _sources?.map((source: any) => source?.id),
+        sources: _sources,
+        // sourceIds: _sources?.map((source: any) => source?.id),
         corpusName: corpusName,
       };
 
