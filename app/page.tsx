@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col p-4 sm:p-8 md:p-24">
       <div className="text-center">
-        <h1 className="text-2xl font-bold">Coze</h1>
+        <h1 className="text-2xl font-bold">Zafron</h1>
 
         <p>Next Gen Search</p>
       </div>
