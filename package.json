@@ -11,7 +11,6 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.5",
     "@clerk/themes": "^1.7.9",
-    "@langchain/openai": "^0.0.12",
     "@nanostores/react": "github:ai/react",
     "@pinecone-database/pinecone": "^4.0.0",
     "@prisma/client": "^5.8.1",
@@ -28,7 +27,6 @@
     "clsx": "^2.1.0",
     "dotenv": "^16.4.1",
     "googleapis": "^126.0.1",
-    "langchain": "^0.1.7",
     "lucide-react": "^0.315.0",
     "next": "14.1.0",
     "next-themes": "^0.2.1",

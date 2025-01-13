@@ -6,7 +6,7 @@ Create .env file and populate
 
 ```
 PINECONE_API_KEY=
-OPENAI_API_KEY=
+DEEPSEEK_API_KEY=
 ```
 
 ## Getting Started
