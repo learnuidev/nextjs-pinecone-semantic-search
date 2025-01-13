@@ -16,7 +16,7 @@ export function SearchResults({ results }: any) {
           return (
             <div
               key={JSON.stringify(result)}
-              className="bg-gray-50 p-8 rounded-2xl"
+              className="bg-gray-50 dark:bg-black p-8 rounded-2xl"
             >
               <div className="w-full">
                 <h1 className="text-3xl mb-8 font-extralight">
@@ -35,7 +35,7 @@ export function SearchResults({ results }: any) {
 
                 <Link
                   href={`/corpus/${searchResult?.corpusName}`}
-                  className=" bg-gray-200 px-4 py-[2px]"
+                  className=" bg-gray-200 dark:bg-gray-900 px-4 py-[2px]"
                   target="_blank"
                 >
                   {searchResult?.corpusName}
@@ -45,23 +45,6 @@ export function SearchResults({ results }: any) {
           );
         })}
       </section>
-
-      {/* <section>
-        <code>
-          <pre>
-            {JSON.stringify(
-              results?.map((result: any) => {
-                return {
-                  ...result,
-                  content: JSON.parse(result?.metadata?.content),
-                };
-              }),
-              null,
-              4
-            )}
-          </pre>
-        </code>
-      </section> */}
     </div>
   );
 }
