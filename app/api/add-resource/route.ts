@@ -1,38 +1,39 @@
 import { AddResourceParams, Resource } from "@/domain/resource/resource.types";
-import { createEmbedding } from "@/lib/openai/create-embedding";
+import { createEmbedding } from "@/lib/pinecone/create-embedding";
+
+import crypto from "crypto";
 
 import { pineconeIndex } from "@/lib/pinecone/pinecone-index";
 
 export async function POST(req: Request) {
-  const { type, content, userId, corpusName } =
+  const { type, content, model, corpusName, nameSpace } =
     (await req.json()) as AddResourceParams;
 
-  // Save it to pine cone
-  const embedding = await createEmbedding(`
+  const embeddingText = `
   Type: ${type}\n\n
   Content: ${content}
-  `);
+  `;
 
-  //   Save it in DB
-  const params = {
+  const newContent = {
+    text: embeddingText,
     id: crypto.randomUUID(),
-    type,
-    content,
   };
 
-  const corpusIndex = pineconeIndex(corpusName);
+  // Save it to pine cone
+  const embedding = await createEmbedding({
+    model,
+    content: newContent,
+  });
 
-  await corpusIndex.upsert([
-    {
-      id: params.id,
-      values: embedding,
-      metadata: {
-        type,
-        userId,
-        content,
-      },
-    },
-  ]);
+  const records = [newContent].map((d, i) => ({
+    id: d.id,
+    values: embedding,
+    metadata: { text: d.text },
+  })) as any;
+
+  const index = pineconeIndex(corpusName);
+
+  await index.namespace(nameSpace).upsert(records);
 
   return Response.json({
     type,

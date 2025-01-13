@@ -46,6 +46,8 @@ export default function CorporaFilters({
                   query: searchTerm,
                   corpusName: searchResultsIndex,
                   rerank: true,
+                  nameSpace: `learnuidev@gmail.com_search-result`,
+                  model: "multilingual-e5-large",
                 })
                 .then((resp) => {
                   setResults(resp);

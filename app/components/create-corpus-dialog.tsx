@@ -17,6 +17,8 @@ import { useState } from "react";
 
 interface CreateCorpus {
   name: string;
+  dimension: number;
+  embeddingModel: string;
 }
 
 const createCorpus = async (options: CreateCorpus) => {
@@ -42,6 +44,10 @@ export function useAddCorpusMutation() {
 
 export function CreateCorpusDialog() {
   const [name, setName] = useState("");
+  const [dimension, setDimension] = useState({
+    dimension: 1024,
+    embeddingModel: "multilingual-e5-large",
+  });
   const router = useRouter();
 
   const addCorpusMutation = useAddCorpusMutation();
@@ -70,13 +76,46 @@ export function CreateCorpusDialog() {
             />
           </div>
         </div>
+        <div className="space-x-3">
+          <div className="flex flex-col gap-4">
+            <Label htmlFor="dimension" className="text-left">
+              Configuration
+            </Label>
+            <div className="flex space-x-4">
+              <button
+                className={dimension.dimension === 1024 ? "text-rose-400" : ""}
+                onClick={() => {
+                  setDimension({
+                    dimension: 1024,
+                    embeddingModel: "multilingual-e5-large",
+                  });
+                }}
+              >
+                multilingual-e5-large
+              </button>
+              <button
+                className={dimension.dimension === 1536 ? "text-rose-400" : ""}
+                onClick={() => {
+                  setDimension({
+                    dimension: 1536,
+                    embeddingModel: "text-embedding-ada-2",
+                  });
+                }}
+              >
+                text-embedding-ada-2
+              </button>
+            </div>
+          </div>
+        </div>
         <DialogFooter>
           <Button
             type="submit"
             onClick={() => {
-              addCorpusMutation.mutateAsync({ name }).then((resp) => {
-                router.push(`/corpus/${name}`);
-              });
+              addCorpusMutation
+                .mutateAsync({ name, ...dimension })
+                .then((resp) => {
+                  router.push(`/corpus/${name}`);
+                });
             }}
           >
             {addCorpusMutation.isPending ? "Creating..." : "Save"}

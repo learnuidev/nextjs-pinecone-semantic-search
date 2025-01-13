@@ -9,12 +9,22 @@ import { useState } from "react";
 
 import { useCorpusParams } from "../../hooks/use-corpus-params";
 
-export function ResourceForm() {
+function getModelName({ dimension }: { dimension: number }) {
+  if (dimension === 1024) {
+    return "multilingual-e5-large";
+  }
+
+  return 1536;
+}
+
+export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {
   const { corpusName } = useCorpusParams();
   const [type, setType] = useState("video");
   const [content, setContent] = useState("");
 
   const addResourceMutation = useAddResourceMutation();
+
+  console.log("CORPUS", corpus);
 
   const resetFormHandler = () => {
     setContent("");
@@ -55,8 +65,9 @@ export function ResourceForm() {
           const inputData = {
             type,
             content,
-            userId: "learnuidev@gmail.com",
             corpusName,
+            model: getModelName(corpus),
+            nameSpace: "learnuidev@gmail.com",
           } as AddResourceParams;
           addResourceMutation.mutateAsync(inputData).then((res) => {
             // alert(JSON.stringify(res));

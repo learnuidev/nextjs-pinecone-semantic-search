@@ -1,9 +1,15 @@
 import { pinecone } from "./pinecone";
 
-export async function createIndex({ name }: { name: string }) {
+export async function createIndex({
+  name,
+  dimension,
+}: {
+  name: string;
+  dimension: number;
+}) {
   const newIndex = await pinecone.createIndex({
     name,
-    dimension: 1536,
+    dimension: dimension,
     metric: "cosine",
     spec: {
       serverless: {

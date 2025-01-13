@@ -1,9 +1,9 @@
 import { createIndex } from "@/lib/pinecone/create-index";
 
 export async function POST(req: Request) {
-  const { name } = await req.json();
+  const { name, dimension } = await req.json();
 
-  const newIndex = await createIndex({ name });
+  const newIndex = await createIndex({ name, dimension });
 
   return Response.json(newIndex);
 }

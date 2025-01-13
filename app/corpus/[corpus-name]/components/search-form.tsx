@@ -14,15 +14,16 @@ import { AddResourceParams } from "@/domain/resource/resource.types";
 import { searchResultsIndex } from "@/lib/search-results-index";
 import { useChat } from "ai/react";
 import { useCorpusParams } from "../../hooks/use-corpus-params";
+import { getModelName } from "./get-model-name";
+import { randomUUID } from "crypto";
 
-export function SearchForm() {
+export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
   const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
   const router = useRouter();
+  const { corpusName } = useCorpusParams();
 
   const addResourceMutation = useAddResourceMutation();
-
-  const { corpusName } = useCorpusParams();
 
   const [sources, setSources] = useState<any>({});
   const [responses, setResponses] = useState({});
@@ -35,6 +36,8 @@ export function SearchForm() {
         debouncedAlert(msg);
       },
     });
+
+  const modelName = getModelName(corpus) as any;
 
   const debouncedAlert = useDebouncedCallback(
     // function
@@ -57,10 +60,13 @@ export function SearchForm() {
       const contentStr = JSON.stringify(content);
 
       const inputData = {
-        type: "search-result",
+        id: crypto.randomUUID(),
         content: contentStr,
-        userId: "learnuidev@gmail.com",
+        type: "search-result",
+        userId: `learnuidev@gmail.com`,
+        nameSpace: `learnuidev@gmail.com_search-result`,
         corpusName: searchResultsIndex,
+        model: modelName,
         createdAt: Date.now(),
       } as AddResourceParams;
 
@@ -107,7 +113,12 @@ export function SearchForm() {
           event.preventDefault();
 
           listSearchResultsMutation
-            ?.mutateAsync({ query: content, corpusName })
+            ?.mutateAsync({
+              query: content,
+              corpusName,
+              model: modelName,
+              nameSpace: "learnuidev@gmail.com",
+            })
             .then((sourcesResp) => {
               const questionIndex = messages?.length;
               setSources({

@@ -1,4 +1,3 @@
-const { Pinecone } = require("@pinecone-database/pinecone");
 const { pc } = require("./00-pc");
 
 const model = "multilingual-e5-large";

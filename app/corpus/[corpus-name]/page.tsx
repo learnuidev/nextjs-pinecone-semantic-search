@@ -60,12 +60,16 @@ export default function CorpusItem() {
             <TabsTrigger value="form">Form</TabsTrigger>
             <TabsTrigger value="search">Search</TabsTrigger>
           </TabsList>
-          <TabsContent value="form">
-            <ResourceForm />
-          </TabsContent>
-          <TabsContent value="search">
-            <SearchForm />
-          </TabsContent>
+          {corpus && (
+            <TabsContent value="form">
+              <ResourceForm corpus={corpus} />
+            </TabsContent>
+          )}
+          {corpus && (
+            <TabsContent value="search">
+              <SearchForm corpus={corpus} />
+            </TabsContent>
+          )}
         </Tabs>
       </Suspense>
     </main>
