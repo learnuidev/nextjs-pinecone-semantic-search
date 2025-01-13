@@ -25,8 +25,6 @@ export async function POST(req: Request) {
     nameSpace,
   });
 
-  console.log("PINECONE RESP", JSON.stringify(pineconeResponse));
-
   const docs = pineconeResponse.matches.map((val: any) => ({
     id: val.id,
     originalScore: val.score,
@@ -56,15 +54,13 @@ export async function POST(req: Request) {
     })
     ?.sort((a: any, b: any) => b?.score - a?.score);
 
-  if (rerank) {
-    rerankedAndSorted = rerankedAndSorted?.filter(
-      (result: any) => result?.score > 0.8
-    );
+  // if (rerank) {
+  //   rerankedAndSorted = rerankedAndSorted?.filter(
+  //     (result: any) => result?.score > 0.8
+  //   );
 
-    console.log("RERANKED AND SORTED", reranked);
-
-    return Response.json(rerankedAndSorted);
-  }
+  //   return Response.json(rerankedAndSorted);
+  // }
 
   return Response.json(rerankedAndSorted);
 }
