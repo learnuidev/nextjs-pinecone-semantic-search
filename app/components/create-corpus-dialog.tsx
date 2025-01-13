@@ -54,7 +54,7 @@ export function CreateCorpusDialog() {
 
   const isAdmin = useIsAdmin();
 
-  if (isAdmin) {
+  if (!isAdmin) {
     return null;
   }
 
