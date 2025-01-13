@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useIsAdmin } from "../hooks/use-is-admin";
 
 interface CreateCorpus {
   name: string;
@@ -48,9 +49,15 @@ export function CreateCorpusDialog() {
     dimension: 1024,
     embeddingModel: "multilingual-e5-large",
   });
+  const addCorpusMutation = useAddCorpusMutation();
   const router = useRouter();
 
-  const addCorpusMutation = useAddCorpusMutation();
+  const isAdmin = useIsAdmin();
+
+  if (isAdmin) {
+    return null;
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>

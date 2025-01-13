@@ -31,14 +31,14 @@ export default function CorpusItem() {
 
   if (isError) {
     return (
-      <div className="flex min-h-screen flex-col items-center p-24">
+      <div className="flex min-h-screen flex-col items-center px-24">
         <h1 className="text-2xl font-bold">Oops. Something Went Wrong</h1>
         <p>Looks like this corpus doesnt exist</p>
       </div>
     );
   }
   return (
-    <main className="flex min-h-screen flex-col p-4 sm:p-24">
+    <main className="flex min-h-screen flex-col p-4 sm:px-24">
       <div className="flex justify-between items-center w-full">
         <div>
           <h1 className="text-2xl font-bold">Coze</h1>

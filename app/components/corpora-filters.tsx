@@ -3,17 +3,9 @@
 import { Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
-import { useDebouncedCallback } from "use-debounce";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useState } from "react";
 import { useListSearchResultsMutation } from "@/domain/search/search.queries";
 import { searchResultsIndex } from "@/lib/search-results-index";
+import { useDebouncedCallback } from "use-debounce";
 
 export default function CorporaFilters({
   setResults,
@@ -58,22 +50,6 @@ export default function CorporaFilters({
           className="pl-10"
         />
       </div>
-      <Select defaultValue="last-viewed">
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Sort by" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="last-viewed">Sort by last viewed</SelectItem>
-        </SelectContent>
-      </Select>
-      <Select defaultValue="filter">
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Filter by" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="filter">Filter by</SelectItem>
-        </SelectContent>
-      </Select>
     </div>
   );
 }

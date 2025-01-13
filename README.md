@@ -24,3 +24,15 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+Documentation
+
+1. Pinecone
+
+2. Clerk
+   [Quickstart](https://clerk.com/docs/quickstarts/nextjs)
+
+3. Dark Mode
+   [Documentation](https://ui.shadcn.com/docs/dark-mode/next)
