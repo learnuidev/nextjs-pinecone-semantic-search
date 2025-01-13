@@ -72,7 +72,6 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
       } as AddResourceParams;
 
       if (!answerResponse?.content?.toLowerCase()?.includes("i don't know")) {
-        console.log("captured", content);
         addResourceMutation.mutateAsync(inputData).then((resp) => {
           setResponses(content);
         });
