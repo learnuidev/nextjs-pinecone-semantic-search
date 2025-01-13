@@ -53,8 +53,8 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
       const content = {
         question: messages?.[questionIndex],
         answer: answerResponse,
-        sources: _sources,
-        // sourceIds: _sources?.map((source: any) => source?.id),
+        // source: _sources,
+        sourceIds: _sources?.map((source: any) => source?.id),
         corpusName: corpusName,
       };
 
@@ -72,6 +72,7 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
       } as AddResourceParams;
 
       if (!answerResponse?.content?.toLowerCase()?.includes("i don't know")) {
+        console.log("captured", content);
         addResourceMutation.mutateAsync(inputData).then((resp) => {
           setResponses(content);
         });
