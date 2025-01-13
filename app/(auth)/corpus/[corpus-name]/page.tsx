@@ -41,7 +41,7 @@ export default function CorpusItem() {
     <main className="flex min-h-screen flex-col p-4 sm:px-24">
       <div className="flex justify-between items-center w-full">
         <div>
-          <h1 className="text-2xl font-bold">Coze</h1>
+          <h1 className="text-2xl font-bold">Zafron</h1>
 
           <p>Next Gen Search</p>
         </div>
