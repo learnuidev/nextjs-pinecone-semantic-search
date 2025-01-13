@@ -16,12 +16,14 @@ import { useChat } from "ai/react";
 import { useCorpusParams } from "../../hooks/use-corpus-params";
 import { getModelName } from "./get-model-name";
 import { randomUUID } from "crypto";
+import { useGetEmail } from "@/app/hooks/use-get-email";
 
 export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
   const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
   const router = useRouter();
   const { corpusName } = useCorpusParams();
+  const emailAddress = useGetEmail();
 
   const addResourceMutation = useAddResourceMutation();
 
@@ -64,8 +66,8 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
         id: crypto.randomUUID(),
         content: contentStr,
         type: "search-result",
-        userId: `learnuidev@gmail.com`,
-        nameSpace: `learnuidev@gmail.com_search-result`,
+        userId: emailAddress,
+        nameSpace: `${emailAddress}_search-result`,
         corpusName: searchResultsIndex,
         model: modelName,
         createdAt: Date.now(),
@@ -118,7 +120,7 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
               query: content,
               corpusName,
               model: modelName,
-              nameSpace: "learnuidev@gmail.com",
+              nameSpace: emailAddress,
             })
             .then((sourcesResp) => {
               const questionIndex = messages?.length;

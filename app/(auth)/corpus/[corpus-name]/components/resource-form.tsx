@@ -8,6 +8,7 @@ import { AddResourceParams } from "@/domain/resource/resource.types";
 import { useState } from "react";
 
 import { useCorpusParams } from "../../hooks/use-corpus-params";
+import { useGetEmail } from "@/app/hooks/use-get-email";
 
 function getModelName({ dimension }: { dimension: number }) {
   if (dimension === 1024) {
@@ -22,9 +23,9 @@ export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {
   const [type, setType] = useState("video");
   const [content, setContent] = useState("");
 
-  const addResourceMutation = useAddResourceMutation();
+  const emailAddress = useGetEmail();
 
-  console.log("CORPUS", corpus);
+  const addResourceMutation = useAddResourceMutation();
 
   const resetFormHandler = () => {
     setContent("");
@@ -67,7 +68,7 @@ export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {
             content,
             corpusName,
             model: getModelName(corpus),
-            nameSpace: "learnuidev@gmail.com",
+            nameSpace: emailAddress,
           } as AddResourceParams;
           addResourceMutation.mutateAsync(inputData).then((res) => {
             // alert(JSON.stringify(res));

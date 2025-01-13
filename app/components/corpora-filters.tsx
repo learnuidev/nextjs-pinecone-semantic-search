@@ -5,16 +5,14 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useListSearchResultsMutation } from "@/domain/search/search.queries";
 import { searchResultsIndex } from "@/lib/search-results-index";
-import { useDebouncedCallback } from "use-debounce";
+import { useGetEmail } from "../hooks/use-get-email";
 
 export default function CorporaFilters({
   setResults,
   searchTerm,
   setSearchTerm,
 }: any) {
-  const debounceSearch = useDebouncedCallback((value) => {
-    setSearchTerm(value);
-  }, 500);
+  const emailAddress = useGetEmail();
 
   const listSearchResultsMutation = useListSearchResultsMutation();
 
@@ -25,7 +23,6 @@ export default function CorporaFilters({
         <Input
           onChange={(event) => {
             setSearchTerm(event.target.value);
-            // debounceSearch(event.target.value);
           }}
           value={searchTerm}
           onKeyDown={(event) => {
@@ -38,7 +35,7 @@ export default function CorporaFilters({
                   query: searchTerm,
                   corpusName: searchResultsIndex,
                   rerank: true,
-                  nameSpace: `learnuidev@gmail.com_search-result`,
+                  nameSpace: `${emailAddress}_search-result`,
                   model: "multilingual-e5-large",
                 })
                 .then((resp) => {
