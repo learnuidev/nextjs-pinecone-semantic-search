@@ -1,7 +1,6 @@
 import { appConfig } from "@/config/app-config";
 import { Pinecone } from "@pinecone-database/pinecone";
 
-import * as cohereApi from "@/lib/cohere.api";
 import { querySearch } from "@/lib/pinecone/query-search";
 
 const rerankingModel = "bge-reranker-v2-m3";
@@ -56,17 +55,6 @@ export async function POST(req: Request) {
       };
     })
     ?.sort((a: any, b: any) => b?.score - a?.score);
-
-  // let rerankedAndSorted = pineconeResponse.matches
-  //   ?.map((match: any, idx: any) => {
-  //     const rankIndex = reranked?.results?.find((r: any) => r?.index === idx);
-  //     return {
-  //       ...match,
-  //       // cohereScore: 100,
-  //       cohereScore: rankIndex?.relevance_score,
-  //     };
-  //   })
-  //   ?.sort((a: any, b: any) => b?.cohereScore - a?.cohereScore);
 
   if (rerank) {
     rerankedAndSorted = rerankedAndSorted?.filter(
