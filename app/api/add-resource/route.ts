@@ -9,17 +9,15 @@ export async function POST(req: Request) {
   const { type, content, model, corpusName, nameSpace } =
     (await req.json()) as AddResourceParams;
 
-  const embeddingText = `${content}`;
-
   const newContent = {
-    text: embeddingText,
+    text: content,
     id: crypto.randomUUID(),
   };
 
   // Save it to pine cone
   const embedding = await createEmbedding({
     model,
-    content: newContent,
+    content: newContent.text,
   });
 
   const records = [newContent].map((d, i) => ({
@@ -33,8 +31,6 @@ export async function POST(req: Request) {
   await index.namespace(nameSpace).upsert(records);
 
   return Response.json({
-    type,
-    content,
-    embedding,
+    status: true,
   });
 }

@@ -40,7 +40,9 @@ Please keep it grounded and only based on the
 
 ##Source Provided:
 
-${JSON.stringify(sources?.length === 0 ? "No source provided. Please answer I dont know" : sources)}`;
+${JSON.stringify(sources?.length === 0 ? "No source provided. Please answer I dont know" : sources)}
+
+If the sources doesn't contain the information asked by the user also answer: "I dont know".`;
 
   let firstMessage = {
     role: "system",

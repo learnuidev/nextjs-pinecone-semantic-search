@@ -9,13 +9,14 @@ import { useState } from "react";
 
 import { useCorpusParams } from "../../hooks/use-corpus-params";
 import { useGetEmail } from "@/app/hooks/use-get-email";
+import { models } from "@/lib/pinecone/models";
 
 function getModelName({ dimension }: { dimension: number }) {
-  if (dimension === 1024) {
-    return "multilingual-e5-large";
+  if (dimension === models.e5Large.dimension) {
+    return models.e5Large.embeddingModel;
   }
 
-  return 1536;
+  return models.ada2.embeddingModel;
 }
 
 export function ResourceForm({ corpus }: { corpus: { dimension: number } }) {

@@ -76,7 +76,12 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
         createdAt: Date.now(),
       } as AddResourceParams;
 
-      if (!answerResponse?.content?.toLowerCase()?.includes("i don't know")) {
+      const answerContent = answerResponse?.content?.toLowerCase();
+
+      if (
+        !answerContent?.includes("i don't know") ||
+        !answerContent?.includes("sources do not mention")
+      ) {
         console.log("captured", content);
         addResourceMutation.mutateAsync(inputData).then((resp) => {
           setResponses(content);
@@ -150,11 +155,11 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
             setContent(event.target.value);
             handleInputChange(event);
           }}
-          onKeyDown={(event) => {
-            if (event.code === "Enter") {
-              router.push(`?query=${content}`);
-            }
-          }}
+          // onKeyDown={(event) => {
+          //   if (event.code === "Enter") {
+          //     router.push(`?query=${content}`);
+          //   }
+          // }}
           placeholder="Ask me anything..."
           value={input}
           className="md:w-[600px] focus-visible:ring-0 rounded-full"

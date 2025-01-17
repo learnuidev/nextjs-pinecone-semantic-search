@@ -2,11 +2,22 @@
 
 ## Prequesites
 
-Create .env file and populate
+Create .env.local file and populate the following
 
 ```
+# for vector db, similarity search and ranking
 PINECONE_API_KEY=
+
+# Deepseek AI: for Summary generation
 DEEPSEEK_API_KEY=
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# Admin Email
+NEXT_PUBLIC_ADMIN_EMAIL=
+
 ```
 
 ## Getting Started

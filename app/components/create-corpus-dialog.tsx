@@ -15,6 +15,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useIsAdmin } from "../hooks/use-is-admin";
+import { models } from "@/lib/pinecone/models";
 
 interface CreateCorpus {
   name: string;
@@ -92,10 +93,7 @@ export function CreateCorpusDialog() {
               <button
                 className={dimension.dimension === 1024 ? "text-rose-400" : ""}
                 onClick={() => {
-                  setDimension({
-                    dimension: 1024,
-                    embeddingModel: "multilingual-e5-large",
-                  });
+                  setDimension(models.e5Large);
                 }}
               >
                 multilingual-e5-large
@@ -103,10 +101,7 @@ export function CreateCorpusDialog() {
               <button
                 className={dimension.dimension === 1536 ? "text-rose-400" : ""}
                 onClick={() => {
-                  setDimension({
-                    dimension: 1536,
-                    embeddingModel: "text-embedding-ada-2",
-                  });
+                  setDimension(models.ada2);
                 }}
               >
                 text-embedding-ada-2
