@@ -18,6 +18,9 @@ import { getModelName } from "./get-model-name";
 import { randomUUID } from "crypto";
 import { useGetEmail } from "@/app/hooks/use-get-email";
 
+import React from "react";
+import { AnimatedLoadingText } from "@/components/animated-loading-text";
+
 export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
   const [revealSource, setRevealSource] = useState(false);
   const [content, setContent] = useState("");
@@ -170,11 +173,21 @@ export function SearchForm({ corpus }: { corpus: { dimension: number } }) {
       </div>
 
       <div className="w-full sm:max-w-4xl mb-8">
-        {currentSource?.length > 0 && (
-          <h1 onClick={() => [setRevealSource((val) => !val)]}>
-            Found: {currentSource?.length}{" "}
-            {currentSource?.length === 1 ? "source" : "sources"}{" "}
-          </h1>
+        {listSearchResultsMutation?.isPending ? (
+          <AnimatedLoadingText
+            className="text-md"
+            message="loading sources..."
+          />
+        ) : (
+          currentSource?.length > 0 && (
+            <h1
+              onClick={() => [setRevealSource((val) => !val)]}
+              className="text-md"
+            >
+              Found: {currentSource?.length}{" "}
+              {currentSource?.length === 1 ? "source" : "sources"}{" "}
+            </h1>
+          )
         )}
       </div>
 
